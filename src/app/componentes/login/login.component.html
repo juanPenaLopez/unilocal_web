@@ -1,1 +1,32 @@
-<p>login works!</p>
+<div class="container">
+    <h1 class="titulo">Iniciar Sesión</h1>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <label for="username" class="label-modificado">
+                Usuario:
+                <span class="text-danger"><strong>*</strong></span>
+            </label>
+            <input placeholder="" name="username" type="text" id="username" class="form-control input-modificado" maxlength="50"
+                formControlName="username">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <label for="contrasena" class="label-modificado">
+                Contraseña:
+                <span class="text-danger"><strong>*</strong></span>
+            </label>
+            <input placeholder="" name="contrasena" type="password" id="contrasena" class="form-control input-modificado" maxlength="50"
+                formControlName="contrasena">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6 text-center">  <!-- Añadido text-center para centrar dentro de la columna -->
+            <button type="button" class="boton-estilo">Login</button>
+            <div class="enlace-contenedor">  <!-- Añade un margen superior y garantiza que el enlace esté en una nueva línea -->
+                <a href="/ruta-para-recuperar-contrasena" class="enlace-recuperacion">¿Olvidaste tu contraseña?</a>
+                <a href="/ruta-para-recuperar-contrasena" class="enlace-recuperacion">¿No tienes alguna cuenta?, Regístrate</a>
+            </div>
+        </div>
+    </div>
+</div>

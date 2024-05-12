@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -13,4 +13,12 @@ export class AppComponent {
   title = 'unilocal_web';
 
   footer = 'Universidad del Quindío - 2024-1';
+
+  constructor(private router: Router,
+		private route: ActivatedRoute,
+){}
+
+  public irALogin(){
+    this.router.navigate(['/login'], { relativeTo: this.route.parent });
+  }
 }
