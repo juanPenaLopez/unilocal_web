@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 class="titulo">¿No puedes iniciar sesión?</h1>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <label for="correo" class="label-modificado">
+                Correo:
+                <span class="text-danger"><strong>*</strong></span>
+            </label>
+            <input placeholder="" name="correo" type="text" id="correo" class="form-control input-modificado" maxlength="50"
+                formControlName="correo">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6 text-center">
+            <button type="button" class="boton-estilo" (click)="restablecerContrasena()">Aceptar</button>
+        </div>
+    </div>
+</div>

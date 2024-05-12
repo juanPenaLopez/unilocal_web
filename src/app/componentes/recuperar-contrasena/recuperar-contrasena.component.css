@@ -1,0 +1,40 @@
+.titulo {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.input-modificado, .boton-estilo {
+    width: 100%;  /* Uniformidad en el ancho */
+    border: 2px solid black;  /* Estilo de borde para el input */
+    padding: 10px;
+    box-sizing: border-box;  /* Asegura que el padding y borde estén dentro del ancho total */
+}
+
+.label-modificado {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 25px;
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 20px;
+    width: 100%;
+}
+
+.boton-estilo {
+    font-family: 'Architects Daughter', cursive;
+    background-color: #597EAA;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 300px; /* Ancho específico */
+}
+
+.row.justify-content-center {
+    width: 100%;  /* Asegura que la fila ocupe todo el ancho disponible */
+}
