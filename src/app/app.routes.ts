@@ -6,6 +6,7 @@ import { GestionNegociosComponent } from './componentes/gestion-negocios/gestion
 import { CrearNegocioComponent } from './componentes/crear-negocio/crear-negocio.component';
 import { DetalleNegocioComponent } from './componentes/detalle-negocio/detalle-negocio.component';
 import { RecuperarContrasenaComponent } from './componentes/recuperar-contrasena/recuperar-contrasena.component';
+import { RestablecerContrasenaLinkComponent } from './componentes/restablecer-contrasena-link/restablecer-contrasena-link.component';
 
 export const routes: Routes = [
 { path: '', component: InicioComponent },
@@ -15,5 +16,6 @@ export const routes: Routes = [
 { path: "crear-negocio", component: CrearNegocioComponent },
 { path: "detalle-negocio/:codigo", component: DetalleNegocioComponent },
 { path: "recuperar-contrasena", component: RecuperarContrasenaComponent },
+{ path: "recuperar-contrasena-link", component: RestablecerContrasenaLinkComponent },
 { path: "**", pathMatch: "full", redirectTo: "" }
 ];

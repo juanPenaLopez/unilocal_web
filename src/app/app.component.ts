@@ -21,4 +21,8 @@ export class AppComponent {
   public irALogin(){
     this.router.navigate(['/login'], { relativeTo: this.route.parent });
   }
+
+  public irARegistro(){
+    this.router.navigate(['/registro'], { relativeTo: this.route.parent });
+  }
 }

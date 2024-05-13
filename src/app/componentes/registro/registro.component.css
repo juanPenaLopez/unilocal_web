@@ -1,0 +1,76 @@
+.titulo {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.input-modificado {
+    width: 80%;
+    border: 2px solid black;
+    padding: 6px;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.label-modificado {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+}
+
+.checkbox-custom {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.checkbox-custom input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.btn-wide {
+    padding-left: 40px; /* Aumenta el padding para hacer el botón más ancho */
+    padding-right: 40px; /* Aumenta el padding para hacer el botón más ancho */
+}
+
+.checkbox-custom .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 4px;
+    border: solid black;
+}
+
+.checkbox-custom input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+.checkbox-custom .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-custom input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-custom .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}

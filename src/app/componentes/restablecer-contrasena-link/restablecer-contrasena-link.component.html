@@ -1,1 +1,29 @@
-<p>restablecer-contrasena-link works!</p>
+<div class="container">
+    <h1 class="titulo">Recuperar contraseña</h1>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <label for="contrasena" class="label-modificado">
+                Contraseña nueva:
+                <span class="text-danger"><strong>*</strong></span>
+            </label>
+            <input placeholder="Ingrese la nueva contraseña" name="contrasena" type="password" id="contrasena" class="form-control input-modificado" maxlength="50"
+                formControlName="contrasena">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <label for="verificarContrasena" class="label-modificado">
+                Confirmar contraseña:
+                <span class="text-danger"><strong>*</strong></span>
+            </label>
+            <input placeholder="Ingrese nuevamente la contraseña" name="verificarContrasena" type="password" id="verificarContrasena" class="form-control input-modificado" maxlength="50"
+                formControlName="verificarContrasena">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6 text-center">
+            <button type="button" class="boton-estilo" (click)="restablecerContrasena()">Restablecer</button>
+            <app-modal-informacion [title]="modalTitle" [content]="modalContent"></app-modal-informacion>
+        </div>
+    </div>
+</div>
