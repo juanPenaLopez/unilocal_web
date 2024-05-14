@@ -1,0 +1,28 @@
+<div class="container">
+    <h1 class="titulo">Eliminar Cuenta</h1>
+    <p class="parrafo">Hola, lamentamos que quieras eliminar tu cuenta.</p>
+    <p class="parrafo">Si lo que quieres es tomarte un descanso, puedes cerrar sesión en tu cuenta de unilocal.</p>
+    <hr>
+    <form [formGroup]="form">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <label for="motivo" class="label-modificado">Nombre completo:</label>
+                <select id="motivo" class="input-modificado" placeholder="Seleccione una ciudad">
+                    <option value="" disabled selected>Seleccione una ciudad</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="contasena" class="label-modificado">Correo:</label>
+                <input type="password" formControlName="contasena" class="input-modificado">
+            </div>
+        </div>
+    </form>
+    <p class="parrafo-advertencia">Si presionas el siguiente botón, tus fotos, lugares favoritos, lugares creados y el resto de los datos se eliminaran definitivamente y no se podrán recuperar. Si en el futuro decides crear otra cuenta de unilocal, no podrás registrarte con el mismo correo.</p>
+    <div class="row justify-content-center">
+        <div class="col-6 text-center">
+            <button type="button" class="btn btn-outline-primary me-4 btn-wide">Cancelar</button>
+            <button type="button" class="btn btn-primary btn-wide" (click)="onEliminarCuenta()">Eliminar cuenta</button>
+            <app-modal-informacion [title]="modalTitle" [content]="modalContent"></app-modal-informacion>
+        </div>
+    </div>
+</div>

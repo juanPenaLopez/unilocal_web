@@ -1,0 +1,39 @@
+.titulo {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.parrafo, .parrafo-advertencia {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 25px;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #333;
+    margin: 20px 0;
+}
+
+.parrafo-advertencia {
+    color: red
+}
+
+.input-modificado {
+    width: 80%;
+    border: 2px solid black;
+    padding: 6px;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.label-modificado {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+}
