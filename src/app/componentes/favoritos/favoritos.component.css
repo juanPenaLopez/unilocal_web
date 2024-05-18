@@ -1,0 +1,51 @@
+.titulo {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.card {
+    margin: auto;
+    max-width: 300px;
+  }
+  .fa-star, .fa-star-o {
+    color: #ffd700; /* Color dorado para las estrellas */
+  }
+  .carousel-item {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Estilos personalizados para los botones de control del carrusel */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: transparent; /* Asegúrate de que el fondo sea transparente */
+    background-size: 100% 100%;
+  }
+  
+  .carousel-control-prev-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="darkblue" viewBox="0 0 8 8"><path d="M4.707 4.5l2.853 2.853-1.414 1.414L1.793 4.5l4.353-4.354 1.414 1.414z"/></svg>');
+  }
+  
+  .carousel-control-next-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="darkblue" viewBox="0 0 8 8"><path d="M3.293 4.5L.44 1.647 1.854.233 6.5 4.5 1.854 8.767.44 7.353z"/></svg>');
+  }
+  
+  /* Agrega padding a los botones de control para evitar superposición */
+  .carousel-control-prev,
+  .carousel-control-next {
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%);
+    padding: 10px; /* Ajusta el valor según sea necesario */
+  }
+  
+  .carousel-control-prev {
+    left: -30px; /* Ajusta el valor según sea necesario */
+  }
+  
+  .carousel-control-next {
+    right: -30px; /* Ajusta el valor según sea necesario */
+  }
+  
