@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear evento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .header img {
+            width: 100px;
+        }
+        .header a {
+            color: blue;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .header a:hover {
+            text-decoration: underline;
+        }
+        .header .user-info {
+            display: flex;
+            align-items: center;
+        }
+        .header .user-info img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .header .user-info span {
+            font-weight: bold;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content h2 {
+            color: blue;
+            text-decoration: underline;
+        }
+        .content form {
+            margin-top: 20px;
+        }
+        .content form input,
+        .content form select,
+        .content form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .content form button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .content form button:hover {
+            background-color: darkblue;
+        }
+        .content .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .content .row label {
+            width: 30%;
+        }
+        .content .row input,
+        .content .row select {
+            width: 65%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Logo">
+        <div class="user-info">
+            <img src="user.png" alt="Usuario">
+            <span>Nombre de usuario</span>
+        </div>
+        <div>
+            <a href="#">Inicio</a> |
+            <a href="#">Preguntas frecuentes</a> |
+            <a href="#">Descubrir</a>
+        </div>
+    </div>
+    <div class="content">
+        <a href="#">X Cancelar</a>
+        <h2>Datos del evento</h2>
+        <form>
+            <div class="row">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+            </div>
+            <div class="row">
+                <label for="fecha-inicio">Fecha de inicio:</label>
+                <input type="date" id="fecha-inicio" name="fecha-inicio">
+                <label for="fecha-fin">Fecha de fin:</label>
+                <input type="date" id="fecha-fin" name="fecha-fin">
+            </div>
+            <div class="row">
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion"></textarea>
+            </div>
+            <button type="submit">C

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear un lugar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .header img {
+            width: 100px;
+        }
+        .header a {
+            color: blue;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .header a:hover {
+            text-decoration: underline;
+        }
+        .header .user-info {
+            display: flex;
+            align-items: center;
+        }
+        .header .user-info img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .header .user-info span {
+            font-weight: bold;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content h2 {
+            color: blue;
+            text-decoration: underline;
+        }
+        .content form {
+            margin-top: 20px;
+        }
+        .content form input,
+        .content form select,
+        .content form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .content form button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .content form button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Logo">
+        <div class="user-info">
+            <img src="user.png" alt="Usuario">
+            <span>Nombre de usuario</span>
+        </div>
+        <div>
+            <a href="#">Inicio</a> |
+            <a href="#">Preguntas frecuentes</a> |
+            <a href="#">Descubrir</a>
+        </div>
+    </div>
+    <div class="content">
+        <a href="#">X Cancelar</a>
+        <h2>Datos generales</h2>
+        <form>
+            <input type="text" placeholder="Nombre">
+            <select>
+                <option value="">Categoría</option>
+            </select>
+            <input type="text" placeholder="Teléfonos">
+            <textarea placeholder="Descripción"></textarea>
+            <button type="button">Seleccionar ubicación</button>
+        </form>
+        <h2>Horarios</h2>
+        <form>
+            <input type="text" placeholder="Días">
+            <input type="text" placeholder="Hora de inicio">
+            <input type="text" placeholder="Hora de fin">
+            <button type="button">Añadir</button>
+        </form>
+        <h2>Imágenes</h2>
+        <button type="button">Añadir imagen</button>
+        <h2>Eventos</h2>
+        <button type="button">Crear evento</button>
+        <button type="button">Crear lugar</button>
+    </div>
+</body>
+</html>

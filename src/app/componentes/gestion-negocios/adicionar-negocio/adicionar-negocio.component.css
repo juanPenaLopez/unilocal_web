@@ -1,0 +1,57 @@
+.titulo {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.input-modificado, .boton-estilo {
+    width: 100%;  /* Uniformidad en el ancho */
+    border: 2px solid black;  /* Estilo de borde para el input */
+    padding: 10px;
+    box-sizing: border-box;  /* Asegura que el padding y borde estén dentro del ancho total */
+}
+
+.label-modificado {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 25px;
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 20px;
+    width: 100%;
+}
+
+.boton-estilo {
+    font-family: 'Architects Daughter', cursive;
+    background-color: #597EAA;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 300px; /* Ancho específico */
+}
+
+.row.justify-content-center {
+    width: 100%;  /* Asegura que la fila ocupe todo el ancho disponible */
+}
+
+.enlace-recuperacion {
+    display: block; /* Hace que el enlace ocupe su propia línea */
+    color: #34578E; /* Utiliza un color que coincida con el estilo de tu botón */
+    text-align: center; /* Centra el texto del enlace */
+    margin-top: 10px; /* Espacio entre el botón y el enlace */
+    text-decoration: none; /* Elimina el subrayado por defecto de los enlaces */
+}
+
+.enlace-recuperacion:hover {
+    text-decoration: underline; /* Añade subrayado al pasar el mouse para mejorar la accesibilidad */
+}
+
+.enlace-contenedor {
+    margin-top: 30px; /* Ajusta este valor para aumentar o disminuir el espacio */
+}
+
