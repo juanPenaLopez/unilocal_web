@@ -34,17 +34,18 @@
         <div class="row mb-4">
             <div class="col-md-6">
                 <label for="ciudad" class="label-modificado">Ciudad:</label>
-                <select id="ciudad" class="input-modificado" placeholder="Seleccione una ciudad">
+                <select id="ciudad" class="input-modificado" placeholder="Seleccione una ciudad" formControlName="ciudad">
                     <option value="" disabled selected>Seleccione una ciudad</option>
                 </select>
             </div>
             <div class="col-md-6">
-                <label for="fileUpload" class="label-modificado">Subir foto:</label>
-                <input type="file" class="input-modificado" id="fileUpload" name="fileUpload" accept=".jpg, .jpeg, .png" multiple>
+                <label for="foto" class="label-modificado">Subir foto:</label>
+                <input type="file" class="input-modificado" id="foto" name="fileUpload" accept=".jpg, .jpeg, .png" multiple
+                formControlName="foto">
             </div>
         </div>
         <label class="checkbox-custom mb-4">
-            <input type="checkbox" id="suscripcion-custom" name="suscripcion" hidden>
+            <input type="checkbox" id="suscripcion-custom" name="suscripcion" hidden formControlName="terminosCondiciones">
             <span class="checkmark"></span>
             Acepto los Términos del servicio y la Política de privacidad y ley de datos personales
         </label>
