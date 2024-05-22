@@ -41,7 +41,7 @@
             <div class="col-md-6">
                 <label for="foto" class="label-modificado">Subir foto:</label>
                 <input type="file" class="input-modificado" id="foto" name="fileUpload" accept=".jpg, .jpeg, .png" multiple
-                formControlName="foto">
+                formControlName="foto" (change)="onFileSelected($event)">
             </div>
         </div>
         <label class="checkbox-custom mb-4">
