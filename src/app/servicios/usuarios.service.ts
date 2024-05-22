@@ -19,6 +19,6 @@ export class UsuariosService {
   public registrarse(inDTO: RegistroClienteDTO): Observable<ResultadoDTO>{
     return this.http.post<ResultadoDTO>(this.usuariosURL + "/registrar-usuario", inDTO).pipe(
       finalize(() => this.loadingService.hide())
-    );;
+    );
   }
 }
