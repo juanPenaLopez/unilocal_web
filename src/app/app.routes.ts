@@ -11,6 +11,7 @@ import { EliminarCuentaComponent } from './componentes/eliminar-cuenta/eliminar-
 import { EditarCuentaComponent } from './componentes/editar-cuenta/editar-cuenta.component';
 import { ConsultarCuentaComponent } from './componentes/consultar-cuenta/consultar-cuenta.component';
 import { FavoritosComponent } from './componentes/favoritos/favoritos.component';
+import { CrearEventoComponent } from './componentes/crear-evento/crear-evento.component';
 
 export const routes: Routes = [
 { path: '', component: InicioComponent },
@@ -25,5 +26,6 @@ export const routes: Routes = [
 { path: "editar-cuenta", component: EditarCuentaComponent },
 { path: "consultar-cuenta", component: ConsultarCuentaComponent },
 { path: "mis-favoritos", component: FavoritosComponent },
+{ path: "crear-evento", component: CrearEventoComponent },
 { path: "**", pathMatch: "full", redirectTo: "" }
 ];
