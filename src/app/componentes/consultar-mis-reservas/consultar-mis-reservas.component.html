@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Mis Reservas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo de la App">
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="faq.html">Preguntas frecuentes</a>
+            <a href="discover.html">Descubrir</a>
+        </nav>
+        <div class="user-menu">
+            <img src="user.png" alt="Usuario">
+            <span>Nombre del Usuario</span>
+            <div class="dropdown">
+                <button class="dropbtn">▼</button>
+                <div class="dropdown-content">
+                    <a href="profile.html">Ver perfil</a>
+                    <a href="places.html">Lugares</a>
+                    <a href="favorites.html">Favoritos</a>
+                    <a href="reservations.html">Mis reservas</a>
+                    <a href="logout.html">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <hr>
+    <main>
+        <h1>Mis Reservas</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>N° Único</th>
+                    <th>Fecha de Reserva</th>
+                    <th>Hora de Reserva</th>
+                    <th>Cantidad de Personas</th>
+                    <th>Estado</th>
+                    <th>Nombre de lugar</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2024-05-22</td>
+                    <td>19:00</td>
+                    <td>4</td>
+                    <td>Confirmada</td>
+                    <td>Restaurante A</td>
+                    <td>
+                        <button class="edit-btn">Editar</button>
+                        <button class="delete-btn">Eliminar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2024-05-23</td>
+                    <td>20:00</td>
+                    <td>2</td>
+                    <td>Finalizada</td>
+                    <td>Restaurante B</td>
+                    <td>
+                        <button class="edit-btn" disabled>Editar</button>
+                        <button class="delete-btn">Eliminar</button>
+                    </td>
+                </tr>
+                <!-- Más filas según sea necesario -->
+            </tbody>
+        </table>
+        <div class="pagination">
+            <button class="prev-page">‹</button>
+            <span>Página 1 de X</span>
+            <button class="next-page">›</button>
+        </div>
+    </main>
+</body>
+</html>
