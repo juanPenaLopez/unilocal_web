@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ImagenService {
 
-  private imgURL = "http://localhost:8080/api/imagenes";
+  private imgURL = "https://unilocal-oyt6.onrender.com/api/imagenes";
 
   constructor(private http: HttpClient) { }
 

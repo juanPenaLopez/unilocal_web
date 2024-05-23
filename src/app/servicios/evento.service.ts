@@ -10,7 +10,7 @@ import { ResultadoDTO } from '../dto/resultado.dto';
 })
 export class EventoService {
 
-  private eventosURL = "http://localhost:8080/api/eventos";
+  private eventosURL = "https://unilocal-oyt6.onrender.com/api/eventos";
 
   constructor(private http: HttpClient,
     private loadingService: LoadingService

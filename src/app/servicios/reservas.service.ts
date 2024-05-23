@@ -10,7 +10,7 @@ import { ResultadoDTO } from '../dto/resultado.dto';
 })
 export class ReservasService {
 
-  private reservasURL = "http://localhost:8080/api/reservas";
+  private reservasURL = "https://unilocal-oyt6.onrender.com/api/reservas";
 
   constructor(private http: HttpClient,
     private loadingService: LoadingService) { }

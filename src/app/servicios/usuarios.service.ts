@@ -10,7 +10,7 @@ import { LoadingService } from './loading.service';
 })
 export class UsuariosService {
 
-  private usuariosURL = "http://localhost:8080/api/usuarios";
+  private usuariosURL = "https://unilocal-oyt6.onrender.com/api/usuarios";
 
   constructor(private http: HttpClient,
     private loadingService: LoadingService
