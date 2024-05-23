@@ -12,6 +12,7 @@ import { EditarCuentaComponent } from './componentes/editar-cuenta/editar-cuenta
 import { ConsultarCuentaComponent } from './componentes/consultar-cuenta/consultar-cuenta.component';
 import { FavoritosComponent } from './componentes/favoritos/favoritos.component';
 import { CrearEventoComponent } from './componentes/crear-evento/crear-evento.component';
+import { CrearReservaComponent } from './componentes/crear-reserva/crear-reserva.component';
 
 export const routes: Routes = [
 { path: '', component: InicioComponent },
@@ -27,5 +28,6 @@ export const routes: Routes = [
 { path: "consultar-cuenta", component: ConsultarCuentaComponent },
 { path: "mis-favoritos", component: FavoritosComponent },
 { path: "crear-evento", component: CrearEventoComponent },
+{ path: "crear-reserva", component: CrearReservaComponent },
 { path: "**", pathMatch: "full", redirectTo: "" }
 ];

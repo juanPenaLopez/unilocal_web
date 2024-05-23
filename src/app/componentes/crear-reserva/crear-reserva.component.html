@@ -1,80 +1,72 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Reserva</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <img src="logo.png" alt="Logo de la App">
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="faq.html">Preguntas frecuentes</a>
-            <a href="discover.html">Descubrir</a>
-        </nav>
-        <div class="user-menu">
-            <img src="user.png" alt="Usuario">
-            <span>Nombre del Usuario</span>
-            <div class="dropdown">
-                <button class="dropbtn">▼</button>
-                <div class="dropdown-content">
-                    <a href="profile.html">Ver perfil</a>
-                    <a href="places.html">Lugares</a>
-                    <a href="favorites.html">Favoritos</a>
-                    <a href="reservations.html">Mis reservas</a>
-                    <a href="logout.html">Cerrar sesión</a>
-                </div>
+<div class="container">
+    <a href="#" class="cancel-link">X Cancelar</a>
+    <h1 class="titulo">Datos de la reserva</h1>
+    <form [formGroup]="form">
+        <div class="form-group horizontal-group">
+            <div class="field">
+                <label for="fechaReservacion" class="label-modificado">Fecha de la reserva:</label>
+                <input type="date" id="fechaReservacion" name="fechaReservacion" formControlName="fechaReserva"
+                    class="input-modificado">
+            </div>
+            <div class="field">
+                <label for="horaReserva" class="label-modificado">Hora de la reserva:</label>
+                <input type="time" id="horaReserva" name="horaReserva" formControlName="horaReserva"
+                    class="input-modificado">
+            </div>
+            <div class="field">
+                <label for="cantidadPersonas" class="label-modificado">Cantidad de personas:</label>
+                <input type="number" id="cantidadPersonas" name="cantidadPersonas" formControlName="cantidadPersonas"
+                    class="input-modificado">
             </div>
         </div>
-    </header>
-    <hr>
-    <main>
-        <a href="crear-negocio.html" class="cancel-link">X Cancelar</a>
-        <h1>Datos de la reserva</h1>
-        <form>
-            <div class="form-group">
-                <label for="reservation-date">Fecha de la reserva</label>
-                <input type="date" id="reservation-date" name="reservation-date">
+        <h2 class="titulo">Lugar a reservar</h2>
+        <div class="row mb-2">
+            <div class="col-md-4">
+                <div class="d-flex mb-2">
+                    <p class="mr-2 nombre-label-consultar">Nombre: </p>
+                    <strong class="nombre-label-consultar">PRUEBA</strong>
+                </div>
+                <div class="d-flex mb-2">
+                    <p class="mr-2 nombre-label-consultar">Ubicación: </p>
+                    <strong class="nombre-label-consultar">PRUEBA</strong>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="d-flex mb-2">
+                    <p class="mr-2 nombre-label-consultar">Categoria: </p>
+                    <strong class="nombre-label-consultar">PRUEBA</strong>
+                </div>
+                <div class="d-flex mb-2 mt-n2">
+                    <button type="button" class="btn btn-red-pastel btn-wide">Consultar imágenes</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="d-flex mb-2">
+                    <p class="mr-2 nombre-label-consultar">Teléfonos: </p>
+                    <strong class="nombre-label-consultar">PRUEBA</strong>
+                </div>
+                <div class="d-flex mb-2 mt-n2">
+                    <button type="button" class="btn btn-blue-pastel btn-wide">Ver ubicación en mapa</button>
+                </div>
             </div>
             <div class="form-group">
-                <label for="reservation-time">Hora de la reserva</label>
-                <input type="time" id="reservation-time" name="reservation-time">
+                <label for="descripcion" class="nombre-label-consultar">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" formControlName="descripcion"
+                    class="textarea-modificado"></textarea>
             </div>
-            <div class="form-group">
-                <label for="people-count">Cantidad de personas</label>
-                <input type="number" id="people-count" name="people-count" min="1" max="100" step="1">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6 text-center">
+                <button type="button" class="btn btn-primary btn-wide" (click)="reservar()">Reservar</button>
             </div>
-            <h2>Lugar a reservar</h2>
-            <table>
-                <tr>
-                    <td>Nombre del lugar:</td>
-                    <td>Nombre de la BD</td>
-                </tr>
-                <tr>
-                    <td>Categoría:</td>
-                    <td>Categoría de la BD</td>
-                </tr>
-                <tr>
-                    <td>Teléfonos:</td>
-                    <td>Teléfonos de la BD</td>
-                </tr>
-                <tr>
-                    <td>Ubicación:</td>
-                    <td>Ubicación de la BD</td>
-                </tr>
-                <tr>
-                    <td>Descripción:</td>
-                    <td>Descripción de la BD</td>
-                </tr>
-            </table>
-            <div class="button-group">
-                <button type="button">Consultar imágenes</button>
-                <button type="button">Ver ubicación en el mapa</button>
-            </div>
-            <button type="submit" class="reserve-btn">Reservar</button>
-        </form>
-    </main>
-</body>
-</html>
+        </div>
+    </form>
+</div>
+<app-modal-informacion [title]="modalTitle" [content]="modalContent"></app-modal-informacion>
+<app-modal-confirmacion
+                        [title]="modalTitleConfirmacion"
+                        [content]="modalContentConfirmacion"
+                        (confirmed)="onConfirmation($event)">
+</app-modal-confirmacion>
