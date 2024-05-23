@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear evento</title>
+    <title>Crear un lugar</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -65,19 +65,6 @@
         .content form button:hover {
             background-color: darkblue;
         }
-        .content .row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        .content .row label {
-            width: 30%;
-        }
-        .content .row input,
-        .content .row select {
-            width: 65%;
-        }
     </style>
 </head>
 <body>
@@ -95,20 +82,28 @@
     </div>
     <div class="content">
         <a href="#">X Cancelar</a>
-        <h2>Datos del evento</h2>
+        <h2>Datos generales</h2>
         <form>
-            <div class="row">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre">
-            </div>
-            <div class="row">
-                <label for="fecha-inicio">Fecha de inicio:</label>
-                <input type="date" id="fecha-inicio" name="fecha-inicio">
-                <label for="fecha-fin">Fecha de fin:</label>
-                <input type="date" id="fecha-fin" name="fecha-fin">
-            </div>
-            <div class="row">
-                <label for="descripcion">Descripción:</label>
-                <textarea id="descripcion" name="descripcion"></textarea>
-            </div>
-            <button type="submit">C
+            <input type="text" placeholder="Nombre">
+            <select>
+                <option value="">Categoría</option>
+            </select>
+            <input type="text" placeholder="Teléfonos">
+            <textarea placeholder="Descripción"></textarea>
+            <button type="button">Seleccionar ubicación</button>
+        </form>
+        <h2>Horarios</h2>
+        <form>
+            <input type="text" placeholder="Días">
+            <input type="text" placeholder="Hora de inicio">
+            <input type="text" placeholder="Hora de fin">
+            <button type="button">Añadir</button>
+        </form>
+        <h2>Imágenes</h2>
+        <button type="button">Añadir imagen</button>
+        <h2>Eventos</h2>
+        <button type="button">Crear evento</button>
+        <button type="button">Crear lugar</button>
+    </div>
+</body>
+</html> -->

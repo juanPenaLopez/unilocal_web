@@ -1,1 +1,30 @@
-<p>crear-evento works!</p>
+<div class="container">
+  <a href="#" class="cancel-link">X Cancelar</a>
+  <h1 class="titulo">Datos del evento</h1>
+  <form [formGroup]="form">
+      <div class="form-group horizontal-group">
+          <div class="field">
+              <label for="nombre" class="label-modificado">Nombre evento:</label>
+              <input type="text" id="nombre" name="nombre" formControlName="nombre" class="input-modificado">
+          </div>
+          <div class="field">
+              <label for="fechaInicio" class="label-modificado">Fecha inicio:</label>
+              <input type="date" id="fechaInicio" name="fechaInicio" formControlName="fechaInicio" class="input-modificado">
+          </div>
+          <div class="field">
+              <label for="fechaFin" class="label-modificado">Fecha fin:</label>
+              <input type="date" id="fechaFin" name="fechaFin" formControlName="fechaFin" class="input-modificado">
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="descripcion" class="label-modificado">Descripción:</label>
+          <textarea id="descripcion" name="descripcion" formControlName="descripcion" class="textarea-modificado"></textarea>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-6 text-center">
+            <button type="button" class="btn btn-primary btn-wide" (click)="crearEvento()">Crear evento</button>
+            <app-modal-informacion [title]="modalTitle" [content]="modalContent"></app-modal-informacion>
+        </div>
+    </div>
+  </form>
+</div>

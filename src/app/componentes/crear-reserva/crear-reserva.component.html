@@ -1,0 +1,72 @@
+<div class="container">
+    <a href="#" class="cancel-link">X Cancelar</a>
+    <h1 class="titulo">Datos de la reserva</h1>
+    <form [formGroup]="form">
+        <div class="form-group horizontal-group">
+            <div class="field">
+                <label for="fechaReservacion" class="label-modificado">Fecha de la reserva:</label>
+                <input type="date" id="fechaReservacion" name="fechaReservacion" formControlName="fechaReserva"
+                    class="input-modificado">
+            </div>
+            <div class="field">
+                <label for="horaReserva" class="label-modificado">Hora de la reserva:</label>
+                <input type="time" id="horaReserva" name="horaReserva" formControlName="horaReserva"
+                    class="input-modificado">
+            </div>
+            <div class="field">
+                <label for="cantidadPersonas" class="label-modificado">Cantidad de personas:</label>
+                <input type="number" id="cantidadPersonas" name="cantidadPersonas" formControlName="cantidadPersonas"
+                    class="input-modificado">
+            </div>
+        </div>
+        <h2 class="titulo">Lugar a reservar</h2>
+        <div class="row mb-2">
+            <div class="col-md-4">
+                <div class="d-flex mb-2">
+                    <p class="mr-2 nombre-label-consultar">Nombre: </p>
+                    <strong class="nombre-label-consultar">PRUEBA</strong>
+                </div>
+                <div class="d-flex mb-2">
+                    <p class="mr-2 nombre-label-consultar">Ubicación: </p>
+                    <strong class="nombre-label-consultar">PRUEBA</strong>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="d-flex mb-2">
+                    <p class="mr-2 nombre-label-consultar">Categoria: </p>
+                    <strong class="nombre-label-consultar">PRUEBA</strong>
+                </div>
+                <div class="d-flex mb-2 mt-n2">
+                    <button type="button" class="btn btn-red-pastel btn-wide">Consultar imágenes</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="d-flex mb-2">
+                    <p class="mr-2 nombre-label-consultar">Teléfonos: </p>
+                    <strong class="nombre-label-consultar">PRUEBA</strong>
+                </div>
+                <div class="d-flex mb-2 mt-n2">
+                    <button type="button" class="btn btn-blue-pastel btn-wide">Ver ubicación en mapa</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="descripcion" class="nombre-label-consultar">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" formControlName="descripcion"
+                    class="textarea-modificado"></textarea>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6 text-center">
+                <button type="button" class="btn btn-primary btn-wide" (click)="reservar()">Reservar</button>
+            </div>
+        </div>
+    </form>
+</div>
+<app-modal-informacion [title]="modalTitle" [content]="modalContent"></app-modal-informacion>
+<app-modal-confirmacion
+                        [title]="modalTitleConfirmacion"
+                        [content]="modalContentConfirmacion"
+                        (confirmed)="onConfirmation($event)">
+</app-modal-confirmacion>

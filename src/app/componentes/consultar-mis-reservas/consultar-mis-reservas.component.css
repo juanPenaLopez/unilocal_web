@@ -91,16 +91,22 @@ table {
     margin: 20px 0;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
+thead {
+    background-color: #f8f9fa;
 }
 
 th, td {
+    border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
 }
 
-button {
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+td button {
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
@@ -108,18 +114,18 @@ button {
     font-weight: bold;
 }
 
-.approve-btn {
-    background-color: #28a745;
-    color: white;
-}
-
-.reject-btn {
-    background-color: #dc3545;
-    color: white;
-}
-
-.consult-btn {
+.edit-btn {
     background-color: #007bff;
+    color: white;
+}
+
+.edit-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.delete-btn {
+    background-color: #dc3545;
     color: white;
 }
 
@@ -128,14 +134,13 @@ button {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-top: 20px;
 }
 
 .pagination button {
-    background-color: #007bff;
-    color: white;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
+    background-color: #007bff;
+    color: white;
     cursor: pointer;
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestionar Negocios</title>
+    <title>Consultar Mis Reservas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -31,47 +31,50 @@
     </header>
     <hr>
     <main>
-        <h1>Gestionar Negocios</h1>
+        <h1>Mis Reservas</h1>
         <table>
             <thead>
                 <tr>
                     <th>N° Único</th>
-                    <th>Estado de Revisión</th>
-                    <th>Nombre</th>
-                    <th>Fecha</th>
-                    <th>Usuario</th>
+                    <th>Fecha de Reserva</th>
+                    <th>Hora de Reserva</th>
+                    <th>Cantidad de Personas</th>
+                    <th>Estado</th>
+                    <th>Nombre de lugar</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td>Pendiente</td>
-                    <td>Negocio A</td>
-                    <td>2024-05-20</td>
-                    <td>Usuario 1</td>
+                    <td>2024-05-22</td>
+                    <td>19:00</td>
+                    <td>4</td>
+                    <td>Confirmada</td>
+                    <td>Restaurante A</td>
                     <td>
-                        <button class="approve-btn">Aprobar</button>
-                        <button class="reject-btn">Rechazar</button>
-                        <button class="consult-btn">Consultar</button>
+                        <button class="edit-btn">Editar</button>
+                        <button class="delete-btn">Eliminar</button>
                     </td>
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>Aprobado</td>
-                    <td>Negocio B</td>
-                    <td>2024-05-19</td>
-                    <td>Usuario 2</td>
+                    <td>2024-05-23</td>
+                    <td>20:00</td>
+                    <td>2</td>
+                    <td>Finalizada</td>
+                    <td>Restaurante B</td>
                     <td>
-                        <button class="consult-btn">Consultar</button>
+                        <button class="edit-btn" disabled>Editar</button>
+                        <button class="delete-btn">Eliminar</button>
                     </td>
                 </tr>
             </tbody>
         </table>
         <div class="pagination">
-            <button class="prev-btn">‹</button>
-            <span>Página 1 de 10</span>
-            <button class="next-btn">›</button>
+            <button class="prev-page">‹</button>
+            <span>Página 1 de X</span>
+            <button class="next-page">›</button>
         </div>
     </main>
 </body>

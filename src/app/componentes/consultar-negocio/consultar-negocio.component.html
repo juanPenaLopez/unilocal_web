@@ -1,0 +1,80 @@
+<!-- <div class="container">
+    <div class="header">
+      <img src="logo.png" alt="Logo" class="logo">
+      <div class="nav-links">
+        <a href="/inicio">Inicio</a> |
+        <a href="/faq">Preguntas Frecuentes</a> |
+        <a href="/descubrir">Descubrir</a>
+      </div>
+      <div class="user-info">
+        <img src="user.jpg" alt="User" class="user-img">
+        <span>{{username}}</span>
+        <div class="dropdown">
+          <button class="dropbtn">Opciones</button>
+          <div class="dropdown-content">
+            <a href="/editar-perfil">Editar perfil</a>
+            <a href="/cerrar-sesion">Cerrar sesión</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <a href="/gestionar-negocio" class="back-link">&lt; Volver</a>
+    <h2 class="section-title">Datos generales</h2>
+    <table class="info-table">
+      <tr><td>Nombre:</td><td>{{nombre}}</td></tr>
+      <tr><td>Categoría:</td><td>{{categoria}}</td></tr>
+      <tr><td>Ubicación:</td><td>{{ubicacion}}</td></tr>
+      <tr><td>Usuario que lo creó:</td><td>{{usuarioCreador}}</td></tr>
+      <tr><td>Estado:</td><td>{{estado}}</td></tr>
+      <tr><td>Fecha de creación:</td><td>{{fechaCreacion}}</td></tr>
+      <tr><td>Teléfonos:</td><td>{{telefonos}}</td></tr>
+      <tr><td>Descripción:</td><td>{{descripcion}}</td></tr>
+      <tr>
+        <td colspan="2">
+          <button (click)="consultarImagenes()">Consultar Imágenes</button>
+          <button (click)="mostrarMapa()">Mostrar Mapa</button>
+        </td>
+      </tr>
+      <tr *ngIf="!esModerador">
+        <td colspan="2">
+          <button (click)="crearReserva()">Crear Reserva</button>
+        </td>
+      </tr>
+    </table>
+    <h2 class="section-title">Horarios</h2>
+    <table class="horarios-table">
+      <tr><th>Día</th><th>Hora de inicio</th><th>Hora de fin</th></tr>
+      <tr *ngFor="let horario of horarios">
+        <td>{{horario.dia}}</td><td>{{horario.horaInicio}}</td><td>{{horario.horaFin}}</td>
+      </tr>
+    </table>
+    <h2 class="section-title">Revisiones</h2>
+    <table class="revisiones-table">
+      <tr><th>Moderador</th><th>Estado</th><th>Fecha</th><th>Descripción</th></tr>
+      <tr *ngFor="let revision of revisiones">
+        <td>{{revision.moderador}}</td><td>{{revision.estado}}</td><td>{{revision.fecha}}</td><td>{{revision.descripcion}}</td>
+      </tr>
+    </table>
+    <div class="pagination">
+      <button (click)="paginaAnterior()">&lt;</button>
+      <button (click)="paginaSiguiente()">&gt;</button>
+    </div>
+    <div *ngIf="!esModerador">
+      <h2 class="section-title">Eventos</h2>
+      <table class="eventos-table">
+        <tr><th>Nombre</th><th>Descripción</th><th>Fecha de inicio</th><th>Fecha de fin</th></tr>
+        <tr *ngFor="let evento of eventos">
+          <td>{{evento.nombre}}</td><td>{{evento.descripcion}}</td><td>{{evento.fechaInicio}}</td><td>{{evento.fechaFin}}</td>
+        </tr>
+      </table>
+      <div class="pagination">
+        <button (click)="paginaAnteriorEvento()">&lt;</button>
+        <button (click)="paginaSiguienteEvento()">&gt;</button>
+      </div>
+      <div class="comment-buttons">
+        <button (click)="consultarComentarios()">Consultar comentarios</button>
+        <button (click)="comentar()">Comentar</button>
+      </div>
+    </div>
+  </div> -->

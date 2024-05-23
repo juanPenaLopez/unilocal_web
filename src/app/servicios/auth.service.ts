@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { LoginDTO } from '../dto/login.dto';
+import { TokenDTO } from '../dto/token.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +17,7 @@ export class AuthService {
     return this.http.post<any>(`${this.authURL}/registrar-cliente`, cliente);
   }
 
-  public loginCliente(loginDTO: any): Observable<any> {
-    return this.http.post<any>(`${this.authURL}/login-cliente`, loginDTO);
+  public loginCliente(loginDTO: LoginDTO): Observable<TokenDTO> {
+    return this.http.post<TokenDTO>(`${this.authURL}/login`, loginDTO);
   }
 }

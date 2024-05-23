@@ -1,0 +1,101 @@
+.titulo {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 0;
+    text-decoration: underline;
+}
+
+.cancel-link {
+    color: blue;
+    text-decoration: underline;
+}
+
+.horizontal-group {
+    display: flex;
+    gap: 20px;
+}
+
+.label-modificado {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+}
+
+.input-modificado {
+    width: 100%;
+    border: 2px solid black;
+    padding: 6px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group:last-child .label-modificado {
+    margin-top: 20px;
+}
+
+.btn-wide {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+
+.btn-crear:hover {
+    background-color: #0056b3;
+}
+
+.textarea-modificado {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.nombre-label-consultar {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.btn-red-pastel {
+    background-color: #e57373; /* Color rojo pastel oscuro */
+    border-color: #e57373;
+    color: #fff; /* Color del texto */
+}
+.btn-red-pastel:hover {
+    background-color: #d32f2f; /* Color rojo más oscuro para el hover */
+    border-color: #d32f2f;
+}
+
+.mt-n2 {
+    margin-top: -2rem; /* Ajusta este valor según sea necesario */
+}
+
+.btn-blue-pastel {
+    background-color: #4682B4; /* Azul pastel más oscuro */
+    border-color: #4682B4;
+    color: #fff; /* Color del texto */
+}
+.btn-blue-pastel:hover {
+    background-color: #4169E1; /* Azul más oscuro para el hover */
+    border-color: #4169E1;
+}
