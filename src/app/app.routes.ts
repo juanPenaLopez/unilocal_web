@@ -13,6 +13,7 @@ import { FavoritosComponent } from './componentes/favoritos/favoritos.component'
 import { CrearEventoComponent } from './componentes/crear-evento/crear-evento.component';
 import { CrearReservaComponent } from './componentes/crear-reserva/crear-reserva.component';
 import { AdicionarNegocioComponent } from './componentes/adicionar-negocio/adicionar-negocio.component';
+import { ConsultarMisReservasComponent } from './componentes/consultar-mis-reservas/consultar-mis-reservas.component';
 
 export const routes: Routes = [
 { path: '', component: InicioComponent },
@@ -29,5 +30,6 @@ export const routes: Routes = [
 { path: "mis-favoritos", component: FavoritosComponent },
 { path: "crear-evento", component: CrearEventoComponent },
 { path: "crear-reserva", component: CrearReservaComponent },
+{ path: "mis-reservas", component: ConsultarMisReservasComponent },
 { path: "**", pathMatch: "full", redirectTo: "" }
 ];

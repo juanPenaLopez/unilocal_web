@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-gestion-negocios',
@@ -7,6 +7,14 @@ import { Component } from '@angular/core';
   templateUrl: './gestion-negocios.component.html',
   styleUrl: './gestion-negocios.component.css'
 })
-export class GestionNegociosComponent {
+export class GestionNegociosComponent implements OnInit{
+
+  ngOnInit(): void {
+    
+  }
+
+  constructor(){
+    
+  }
 
 }
