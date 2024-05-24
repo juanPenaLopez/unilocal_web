@@ -1,6 +1,5 @@
 <div class="container">
-  <header class="d-flex flex-wrap align-items-center justify-content-center
-  justify-content-md-between py-3">
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
     <div class="col-md-3 mb-2 mb-md-0">
       <a routerLink="" class="d-inline-flex link-body-emphasis text-decoration-none">
         <i class="fa-solid fa-map-location-dot fs-3"></i>
@@ -8,14 +7,28 @@
       </a>
     </div>
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-      <li><a routerLink="" class="nav-link px-2 link-secondary">Inicio</a></li>
-      <li><a routerLink="/gestion-negocios" class="nav-link px-2">Gestión negocios</a></li>
-      <li><a routerLink="" class="nav-link px-2">Favoritos</a></li>
+      <li><a (click)="irAInicio()" class="nav-link px-2 link-secondary">Inicio</a></li>
+      <li><a (click)="irAGestionarNegocios()" class="nav-link px-2">Gestión negocios</a></li>
+      <li><a (click)="irAMisFavoritos()" class="nav-link px-2">Favoritos</a></li>
     </ul>
-    <div class="col-md-3 text-end">
-      <button type="button" (click)="irALogin()" class="btn btn-outline-primary
-  me-2">Login</button>
+    <div *ngIf="!isLoggedIn" class="col-md-3 text-end">
+      <button type="button" (click)="irALogin()" class="btn btn-outline-primary me-2">Login</button>
       <button type="button" (click)="irARegistro()" class="btn btn-primary">Registro</button>
+    </div>
+    <div *ngIf="isLoggedIn && userRole === 'usuario'" class="col-md-3 text-end">
+      <!-- Menú desplegable para usuarios loggeados -->
+      <div class="dropdown">
+        <a class="dropdown-toggle text-decoration-none" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-user-circle fs-4"></i> {{ userName }}
+        </a>
+
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" href="#">Perfil</a></li>
+          <li><a class="dropdown-item" href="#">Configuración</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#" (click)="cerrarSesion()">Cerrar sesión</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 </div>
@@ -25,20 +38,17 @@
   </div>
 </div>
 <div class="container">
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4
-border-top">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
       <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2024-1 Universidad del
         Quindío</span>
     </div>
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="fa-brands fa-x-twitter
-fs-5"></i></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="fa-brands fa-instagram
-fs-5"></i></a></li>
-      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="fa-brands fa-facebook
-fs-5"></i></a></li>
+      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="fa-brands fa-x-twitter fs-5"></i></a></li>
+      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="fa-brands fa-instagram fs-5"></i></a></li>
+      <li class="ms-3"><a class="text-body-secondary" href="#"><i class="fa-brands fa-facebook fs-5"></i></a></li>
     </ul>
   </footer>
   <app-loading></app-loading>
+  <app-modal-informacion [title]="modalTitle" [content]="modalContent"></app-modal-informacion>
 </div>

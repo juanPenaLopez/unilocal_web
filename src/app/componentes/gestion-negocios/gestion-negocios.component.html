@@ -3,13 +3,28 @@
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th>N° Único</th>
-                <th>Estado de Revisión</th>
-                <th>Nombre</th>
-                <th>Fecha</th>
-                <th>Usuario</th>
-                <th>Acciones</th>
+                <th class="nombre-label-consultar">N° Único</th>
+                <th class="nombre-label-consultar">Estado de Revisión</th>
+                <th class="nombre-label-consultar">Nombre</th>
+                <th class="nombre-label-consultar">Fecha</th>
+                <th class="nombre-label-consultar">Usuario</th>
+                <th class="nombre-label-consultar">Acciones</th>
             </tr>
         </thead>
+        <tbody>
+            <tr *ngFor="let lugar of listaLugaresDTO">
+                <td class="nombre-label-consultar">{{ lugar.id }}</td>
+                <td class="nombre-label-consultar">{{ lugar.estado }}</td>
+                <td class="nombre-label-consultar">{{ lugar.nombre }}</td>
+                <td class="nombre-label-consultar">{{ lugar.fechaCreacion }}</td>
+                <td class="nombre-label-consultar">{{ lugar.usuarioCreacion }}</td>
+                <td>
+                    <button (click)="buscarLugar(lugar)"><fa-icon [icon]="faSearch"></fa-icon></button>
+                    <button (click)="editarLugar(lugar)"><fa-icon [icon]="faEdit"></fa-icon></button>
+                    <button (click)="eliminarLugar(lugar)"><fa-icon [icon]="faTrash"></fa-icon></button>
+                </td>
+            </tr>
+        </tbody>
     </table>
+    <app-modal-informacion [title]="modalTitle" [content]="modalContent"></app-modal-informacion>
 </div>
