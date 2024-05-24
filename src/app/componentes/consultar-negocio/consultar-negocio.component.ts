@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { TokenService } from '../../servicios/token.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-consultar-negocio',
   standalone: true,
-  imports: [MatTooltipModule],
+  imports: [],
   templateUrl: './consultar-negocio.component.html',
   styleUrl: './consultar-negocio.component.css'
 })
