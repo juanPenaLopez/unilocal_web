@@ -1,1 +1,45 @@
-<p>editar-cuenta works!</p>
+<div class="container mt-5">
+    <h1 class="titulo">Editar perfil</h1>
+    <form [formGroup]="form">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <label for="nombreCompleto" class="label-modificado">Nombre completo:</label>
+                <input type="text" formControlName="nombreCompleto" class="input-modificado">
+            </div>
+            <div class="col-md-6">
+                <label for="correo" class="label-modificado">Correo:</label>
+                <input type="email" formControlName="correo" class="input-modificado">
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <label for="nombreUsuario" class="label-modificado">Nombre de usuario:</label>
+                <input type="text" formControlName="nombreUsuario" class="input-modificado">
+            </div>
+            <div class="col-md-6">
+                <label for="confirmarCorreo" class="label-modificado">Confirmar correo:</label>
+                <input type="email" formControlName="confirmarCorreo" class="input-modificado">
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <label for="ciudad" class="label-modificado">Ciudad:</label>
+                <select id="ciudad" class="input-modificado" placeholder="Seleccione una ciudad" formControlName="ciudad">
+                    <option value="" disabled selected>Seleccione una ciudad</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="foto" class="label-modificado">Subir foto:</label>
+                <input type="file" class="input-modificado" id="foto" name="fileUpload" accept=".jpg, .jpeg, .png" multiple
+                formControlName="foto" (change)="onFileSelected($event)">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6 text-center">
+                <button type="button" class="btn btn-outline-primary me-4 btn-wide" (click)="redireccionarPantallaPrincipal()">Ahora no</button>
+                <button type="button" class="btn btn-primary btn-wide" (click)="editarCuenta()">Editar cuenta</button>
+                <app-modal-informacion [title]="modalTitle" [content]="modalContent"></app-modal-informacion>
+            </div>
+        </div>
+    </form>
+</div>

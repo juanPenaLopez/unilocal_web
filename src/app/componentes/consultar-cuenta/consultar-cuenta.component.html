@@ -1,3 +1,35 @@
 <div class="container">
     <h1 class="titulo">Consultar perfil</h1>
+    <div class="row mb-2">
+        <div class="col-md-4">
+            <div class="d-flex mb-2">
+                <p class="mr-2 nombre-label-consultar">Nombre completo: </p>
+                <strong class="nombre-label-consultar">{{ usuarioDTO.nombreCompleto }}</strong>
+            </div>
+            <div class="d-flex mb-2">
+                <p class="mr-2 nombre-label-consultar">Nombre de usuario: </p>
+                <strong class="nombre-label-consultar">{{ usuarioDTO.nickname }}</strong>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="d-flex mb-2">
+                <p class="mr-2 nombre-label-consultar">Correo: </p>
+                <strong class="nombre-label-consultar">{{ usuarioDTO.email }}</strong>
+            </div>
+            <div class="d-flex mb-2">
+                <p class="mr-2 nombre-label-consultar">Ciudad: </p>
+                <strong class="nombre-label-consultar">{{ usuarioDTO.idCiudad }}</strong>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <img src="{{ usuarioDTO.urlFoto }}" class="img-fluid mb-2" alt="Foto de perfil">
+            <h5 class="titulo-foto">Foto de perfil</h5>
+        </div>
+    </div>
+    <div class="col-6 text-center">
+        <button type="button" class="btn btn-red-pastel me-4 btn-wide" (click)="irEliminarPerfil()">Eliminar perfil</button>
+        <button type="button" class="btn btn-primary btn-wide" (click)="irEditarPerfil()">Editar perfil</button>
+        <app-modal-informacion [title]="modalTitle" [content]="modalContent"></app-modal-informacion>
+    </div>
 </div>

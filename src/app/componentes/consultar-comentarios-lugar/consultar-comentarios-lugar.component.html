@@ -1,0 +1,57 @@
+<div class="container">
+    <a class="volver-link">< Volver</a>
+    <h1 class="titulo">Datos del lugar</h1>
+    <div class="row mb-2">
+        <div class="col-md-4">
+            <div class="d-flex mb-2">
+                <p class="mr-2 nombre-label-consultar">Nombre: </p>
+                <strong class="nombre-label-consultar">PRUEBA</strong>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="d-flex mb-2">
+                <p class="mr-2 nombre-label-consultar">Ubicación: </p>
+                <strong class="nombre-label-consultar">PRUEBA</strong>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="d-flex mb-2">
+                <p class="mr-2 nombre-label-consultar">Categoría: </p>
+                <strong class="nombre-label-consultar">PRUEBA</strong>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="d-flex mb-2">
+                <p class="mr-2 nombre-label-consultar">Teléfonos: </p>
+                <strong class="nombre-label-consultar">PRUEBA</strong>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mensajeInicial" class="nombre-label-consultar">Descripción:</label>
+            <textarea id="mensajeInicial" name="mensajeInicial"
+                class="textarea-modificado" disabled ></textarea>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6 text-center">
+            <button type="button" class="btn btn-red-pastel btn-wide" (click)="consultarImagenesLugar()">Consultar
+                imagenes</button>
+            <button type="button" class="btn btn-blue-pastel btn-wide" (click)="verUbicacionMapa()">Ver ubicación en
+                mapa</button>
+        </div>
+    </div>
+    <h1 class="titulo">Comentarios</h1>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th class="nombre-label-consultar">Nombre usuario</th>
+            <th class="nombre-label-consultar">Nombre propietario</th>
+            <th class="nombre-label-consultar">¿Está respondido?</th>
+            <th class="nombre-label-consultar">Acciones</th>
+          </tr>
+        </thead>
+      </table>
+</div>

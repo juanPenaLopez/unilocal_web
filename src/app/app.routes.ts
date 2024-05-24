@@ -3,7 +3,6 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { GestionNegociosComponent } from './componentes/gestion-negocios/gestion-negocios.component';
-import { DetalleNegocioComponent } from './componentes/detalle-negocio/detalle-negocio.component';
 import { RecuperarContrasenaComponent } from './componentes/recuperar-contrasena/recuperar-contrasena.component';
 import { RestablecerContrasenaLinkComponent } from './componentes/restablecer-contrasena-link/restablecer-contrasena-link.component';
 import { EliminarCuentaComponent } from './componentes/eliminar-cuenta/eliminar-cuenta.component';
@@ -13,6 +12,11 @@ import { FavoritosComponent } from './componentes/favoritos/favoritos.component'
 import { CrearEventoComponent } from './componentes/crear-evento/crear-evento.component';
 import { CrearReservaComponent } from './componentes/crear-reserva/crear-reserva.component';
 import { AdicionarNegocioComponent } from './componentes/adicionar-negocio/adicionar-negocio.component';
+import { ConsultarMisReservasComponent } from './componentes/consultar-mis-reservas/consultar-mis-reservas.component';
+import { ConsultarNegocioComponent } from './componentes/consultar-negocio/consultar-negocio.component';
+import { EditarNegocioComponent } from './componentes/editar-negocio/editar-negocio.component';
+import { ResponderComentarioComponent } from './componentes/responder-comentario/responder-comentario.component';
+import { ConsultarComentariosLugarComponent } from './componentes/consultar-comentarios-lugar/consultar-comentarios-lugar.component';
 
 export const routes: Routes = [
 { path: '', component: InicioComponent },
@@ -20,7 +24,6 @@ export const routes: Routes = [
 { path: 'registro', component: RegistroComponent },
 { path: "gestion-negocios", component: GestionNegociosComponent },
 { path: "crear-negocio", component: AdicionarNegocioComponent },
-{ path: "detalle-negocio/:codigo", component: DetalleNegocioComponent },
 { path: "recuperar-contrasena", component: RecuperarContrasenaComponent },
 { path: "recuperar-contrasena-link", component: RestablecerContrasenaLinkComponent },
 { path: "eliminar-cuenta", component: EliminarCuentaComponent },
@@ -29,5 +32,10 @@ export const routes: Routes = [
 { path: "mis-favoritos", component: FavoritosComponent },
 { path: "crear-evento", component: CrearEventoComponent },
 { path: "crear-reserva", component: CrearReservaComponent },
+{ path: "mis-reservas", component: ConsultarMisReservasComponent },
+{ path: "consultar-negocio", component: ConsultarNegocioComponent },
+{ path: "editar-negocio", component: EditarNegocioComponent },
+{ path: "responder-comentario", component: ResponderComentarioComponent },
+{ path: "consultar-comentarios-lugar", component: ConsultarComentariosLugarComponent },
 { path: "**", pathMatch: "full", redirectTo: "" }
 ];
