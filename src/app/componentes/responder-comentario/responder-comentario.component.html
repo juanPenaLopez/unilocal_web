@@ -1,0 +1,58 @@
+<!-- <div class="container mt-5">
+    <h1 class="titulo">Datos del lugar</h1>
+    <div class="form-group">
+       <label>Nombre:</label>
+      <span>{{ lugar.nombre }}</span>
+    </div>
+    <div class="form-group">
+      <label>Ubicación:</label>
+      <span>{{ lugar.ubicacion }}</span>
+    </div>
+    <div class="form-group">
+      <label>Categoría:</label>
+      <span>{{ lugar.categoria }}</span>
+    </div>
+    <div class="form-group">
+      <label>Teléfonos:</label>
+      <span>{{ lugar.telefono }}</span>
+    </div>
+    <div class="form-group">
+      <label>Descripción:</label>
+      <textarea class="form-control" rows="4" disabled>{{ lugar.descripcion }}</textarea>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary">Consultar imágenes</button>
+      <button class="btn btn-secondary">Ver ubicación en mapa</button>
+    </div>
+</div>
+<div class="comments-section">
+  <h2>Comentarios</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nombre usuario</th>
+        <th>Nombre propietario</th>
+        <th>¿Está respondido?</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let comentario of comentarios">
+            <td>{{ comentario.nombreUsuario }}</td>
+            <td>{{ comentario.nombrePropietario }}</td>
+            <td>{{ comentario.estaRespondido ? 'Sí' : 'No' }}</td>
+            <td class="actions">
+              <img src="assets/images/view-icon.png" alt="Ver">
+              <img *ngIf="!comentario.estaRespondido" src="assets/images/respond-icon.png" alt="Responder">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <nav>
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">de XXX</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div> -->

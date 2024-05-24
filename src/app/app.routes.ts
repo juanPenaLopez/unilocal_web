@@ -15,6 +15,8 @@ import { AdicionarNegocioComponent } from './componentes/adicionar-negocio/adici
 import { ConsultarMisReservasComponent } from './componentes/consultar-mis-reservas/consultar-mis-reservas.component';
 import { ConsultarNegocioComponent } from './componentes/consultar-negocio/consultar-negocio.component';
 import { EditarNegocioComponent } from './componentes/editar-negocio/editar-negocio.component';
+import { ResponderComentarioComponent } from './componentes/responder-comentario/responder-comentario.component';
+import { ConsultarComentariosLugarComponent } from './componentes/consultar-comentarios-lugar/consultar-comentarios-lugar.component';
 
 export const routes: Routes = [
 { path: '', component: InicioComponent },
@@ -33,5 +35,7 @@ export const routes: Routes = [
 { path: "mis-reservas", component: ConsultarMisReservasComponent },
 { path: "consultar-negocio", component: ConsultarNegocioComponent },
 { path: "editar-negocio", component: EditarNegocioComponent },
+{ path: "responder-comentario", component: ResponderComentarioComponent },
+{ path: "consultar-comentarios-lugar", component: ConsultarComentariosLugarComponent },
 { path: "**", pathMatch: "full", redirectTo: "" }
 ];
