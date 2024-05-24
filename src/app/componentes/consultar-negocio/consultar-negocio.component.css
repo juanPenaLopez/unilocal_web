@@ -9,6 +9,7 @@
 .volver-link {
     color: blue;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .nombre-label-consultar {

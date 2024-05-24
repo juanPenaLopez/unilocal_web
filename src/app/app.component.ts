@@ -7,11 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { TokenService } from './servicios/token.service';
 import { ModalInformacionComponent } from './componentes/modal-informacion/modal-informacion.component';
+import { LoginComponent } from './componentes/login/login.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LoadingComponent, ReactiveFormsModule, HttpClientModule, CommonModule, ModalInformacionComponent],
+  imports: [RouterOutlet, LoadingComponent, ReactiveFormsModule, HttpClientModule, CommonModule, ModalInformacionComponent,
+    LoginComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -76,5 +79,17 @@ export class AppComponent implements OnInit{
     this.userName = '';
     this.userRole = '';
     this.router.navigate(['/'], { relativeTo: this.route.parent });
+  }
+
+  public irAConsultarPerfil(){
+    this.router.navigate(['/consultar-cuenta'], { relativeTo: this.route.parent });
+  }
+
+  public irAGestionarLugares(){
+    this.router.navigate(['/gestion-negocios'], { relativeTo: this.route.parent });
+  }
+
+  public irAMisReservas(){
+    this.router.navigate(['/mis-reservas'], { relativeTo: this.route.parent });
   }
 }

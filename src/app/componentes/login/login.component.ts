@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginDTO } from '../../dto/login.dto';
 import { AuthService } from '../../servicios/auth.service';
@@ -20,6 +20,7 @@ export class LoginComponent {
   @ViewChild(ModalInformacionComponent) modalComponent: ModalInformacionComponent;
   modalTitle: string;
   modalContent: string;
+  @Output() loginSuccess: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(private formBuilder: FormBuilder,
     private authService: AuthService,
@@ -44,6 +45,7 @@ export class LoginComponent {
     this.authService.loginCliente(this.loginDTO).subscribe(resp => {
       if (resp.error) {
         this.tokenService.setToken(resp.respuesta.token);
+        this.loginSuccess.emit();
         this.router.navigate(['/'], { relativeTo: this.route.parent });
       }
     }, error => {

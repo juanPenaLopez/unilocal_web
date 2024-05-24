@@ -5,7 +5,7 @@ import { ModalInformacionComponent } from '../modal-informacion/modal-informacio
 import { TokenService } from '../../servicios/token.service';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faSearch, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faEdit, faTrash, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { ModalConfirmacionComponent } from '../modal-confirmacion/modal-confirmacion.component';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -25,11 +25,14 @@ export class GestionNegociosComponent implements OnInit {
   faSearch = faSearch;
   faEdit = faEdit;
   faTrash = faTrash;
+  faCheck = faCheck;
+  faTimes = faTimes;
   @ViewChild(ModalConfirmacionComponent) modalConfirmacion: ModalConfirmacionComponent;
   showConfirmationModal = false;
   modalTitleConfirmacion: string;
   modalContentConfirmacion: string;
   lugarDTO: LugarDTO;
+  userRole: string = '';
 
   ngOnInit(): void {
     this.buscar();
@@ -48,6 +51,7 @@ export class GestionNegociosComponent implements OnInit {
       const token = this.tokenService.getToken();
       if (token) {
         const tokenPayload = this.tokenService.decodePayload(token);
+        this.userRole = tokenPayload.rol;
         this.lugarServicio.consultarLugaresUsuario(tokenPayload.id).subscribe(resp => {
           if (resp) {
             this.listaLugaresDTO = resp;
@@ -100,5 +104,13 @@ export class GestionNegociosComponent implements OnInit {
         }
       );
     }
+  }
+
+  public aprobarLugar(lugar: LugarDTO){
+    
+  }
+
+  public rechazarLugar(lugar: LugarDTO){
+
   }
 }
