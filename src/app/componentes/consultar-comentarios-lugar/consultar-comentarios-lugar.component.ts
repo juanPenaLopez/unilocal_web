@@ -9,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class ConsultarComentariosLugarComponent {
 
+  constructor() {}
+
+  public consultarImagenesLugar(){
+
+  }
+
+  public verUbicacionMapa(){
+
+  }
+
 }
