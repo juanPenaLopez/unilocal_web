@@ -6,14 +6,14 @@
     <form [formGroup]="form">
         <div class="row mb-4">
             <div class="col-md-6">
-                <label for="motivo" class="label-modificado">Nombre completo:</label>
-                <select id="motivo" class="input-modificado" placeholder="Seleccione una ciudad">
-                    <option value="" disabled selected>Seleccione una ciudad</option>
+                <label for="motivo" class="label-modificado">Motivo:</label>
+                <select id="motivo" class="input-modificado" placeholder="Seleccione un motivo">
+                    <option value="" disabled selected>Seleccione un motivo</option>
                 </select>
             </div>
             <div class="col-md-6">
-                <label for="contasena" class="label-modificado">Correo:</label>
-                <input type="password" formControlName="contasena" class="input-modificado">
+                <label for="correo" class="label-modificado">Correo:</label>
+                <input type="email" formControlName="correo" class="input-modificado">
             </div>
         </div>
     </form>

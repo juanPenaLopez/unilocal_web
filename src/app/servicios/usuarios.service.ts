@@ -4,6 +4,8 @@ import { RegistroClienteDTO } from '../dto/registro.cliente.dto';
 import { Observable, finalize } from 'rxjs';
 import { ResultadoDTO } from '../dto/resultado.dto';
 import { LoadingService } from './loading.service';
+import { ActualizarClienteDTO } from '../dto/actualizar.cliente.dto';
+import { UsuarioDTO } from '../dto/user.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +22,20 @@ export class UsuariosService {
     return this.http.post<ResultadoDTO>(this.usuariosURL + "/registrar-usuario", inDTO).pipe(
       finalize(() => this.loadingService.hide())
     );
+  }
+
+  public eliminarUsuario(idUsuario: string): Observable<ResultadoDTO> {
+    const url = `${this.usuariosURL}/eliminar-usuario/${idUsuario}`;
+    return this.http.delete<any>(url);
+  }
+
+  public editarPerfil(inDTO: ActualizarClienteDTO): Observable<ResultadoDTO>{
+    return this.http.put<ResultadoDTO>(this.usuariosURL + "/editar-perfil", inDTO);
+  }
+
+  public consultarPerfil(idUsuario: string): Observable<UsuarioDTO> {
+    return this.http.get<UsuarioDTO>(this.usuariosURL + "/consultar-perfil", {
+      params: { idUsuario }
+    });
   }
 }

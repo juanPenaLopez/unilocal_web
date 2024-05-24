@@ -4,3 +4,29 @@
     font-weight: bold;
     margin: 20px 0;
 }
+
+.nombre-label-consultar {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.btn-wide {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.btn-red-pastel {
+    background-color: #e57373;
+    border-color: #e57373;
+    color: #fff;
+}
+.btn-red-pastel:hover {
+    background-color: #d32f2f;
+    border-color: #d32f2f;
+}
+
+.titulo-foto {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+}

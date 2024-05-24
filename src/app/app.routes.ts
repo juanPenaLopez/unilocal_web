@@ -3,7 +3,6 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { GestionNegociosComponent } from './componentes/gestion-negocios/gestion-negocios.component';
-import { DetalleNegocioComponent } from './componentes/detalle-negocio/detalle-negocio.component';
 import { RecuperarContrasenaComponent } from './componentes/recuperar-contrasena/recuperar-contrasena.component';
 import { RestablecerContrasenaLinkComponent } from './componentes/restablecer-contrasena-link/restablecer-contrasena-link.component';
 import { EliminarCuentaComponent } from './componentes/eliminar-cuenta/eliminar-cuenta.component';
@@ -21,7 +20,6 @@ export const routes: Routes = [
 { path: 'registro', component: RegistroComponent },
 { path: "gestion-negocios", component: GestionNegociosComponent },
 { path: "crear-negocio", component: AdicionarNegocioComponent },
-{ path: "detalle-negocio/:codigo", component: DetalleNegocioComponent },
 { path: "recuperar-contrasena", component: RecuperarContrasenaComponent },
 { path: "recuperar-contrasena-link", component: RestablecerContrasenaLinkComponent },
 { path: "eliminar-cuenta", component: EliminarCuentaComponent },
