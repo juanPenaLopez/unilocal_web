@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LugarDTO } from '../../dto/lugar.dto';
 
 @Component({
   selector: 'app-gestion-negocios',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './gestion-negocios.component.css'
 })
 export class GestionNegociosComponent implements OnInit{
+
+  lugarDTO: Array<LugarDTO> = [];
 
   ngOnInit(): void {
     
