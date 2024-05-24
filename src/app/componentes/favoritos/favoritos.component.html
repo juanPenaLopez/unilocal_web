@@ -1,37 +1,41 @@
 <div class="container">
-    <h1 class="titulo">Mis favoritos</h1>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button *ngFor="let group of getCardGroups(); let i = index" type="button" data-bs-target="#carouselExampleIndicators"
-                  [attr.data-bs-slide-to]="i" [class.active]="i === 0" aria-current="true" [attr.aria-label]="'Slide ' + (i + 1)"></button>
-        </div>
-        <div class="carousel-inner">
-          <div *ngFor="let group of getCardGroups(); let i = index" class="carousel-item" [class.active]="i === 0">
-            <div class="row">
-              <div *ngFor="let card of group" class="col-md-4">
-                <div class="card">
-                  <img [src]="card.image" class="card-img-top" [alt]="card.name">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ card.name }}</h5>
-                    <div>
-                      <ng-container *ngFor="let star of [].constructor(5); let starIndex = index">
-                        <i class="fa" [class.fa-star]="starIndex < card.rating" [class.fa-star-o]="starIndex >= card.rating"></i>
-                      </ng-container>
-                    </div>
-                    <p class="card-text">{{ card.description }}</p>
-                  </div>
+  <h1 class="titulo">Mis favoritos</h1>
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button *ngFor="let group of getCardGroups(); let i = index" type="button"
+        data-bs-target="#carouselExampleIndicators" [attr.data-bs-slide-to]="i" [class.active]="i === 0"
+        aria-current="true" [attr.aria-label]="'Slide ' + (i + 1)"></button>
+    </div>
+    <div class="carousel-inner">
+      <div *ngFor="let group of getCardGroups(); let i = index" class="carousel-item" [class.active]="i === 0">
+        <div class="row">
+          <div *ngFor="let card of group" class="col-md-4">
+            <div class="card">
+              <img [src]="card.image" class="card-img-top" [alt]="card.name">
+              <div class="card-body">
+                <h5 class="card-title">{{ card.name }}</h5>
+                <div>
+                  <ng-container *ngFor="let star of [].constructor(5); let starIndex = index">
+                    <i class="fa" [class.fa-star]="starIndex < card.rating"
+                      [class.fa-star-o]="starIndex >= card.rating"></i>
+                  </ng-container>
                 </div>
+                <p class="card-text">{{ card.description }}</p>
               </div>
             </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 </div>

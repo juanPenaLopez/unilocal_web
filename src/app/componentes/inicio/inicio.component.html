@@ -1,79 +1,49 @@
-<!-- <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Inicio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Logo de la app">
+<div class="container">
+    <h1 class="titulo">¿A dónde quiere ir?</h1>
+    <app-busqueda (searchChange)="onSearch($event)"></app-busqueda>
+    <h1 class="titulo">Comentarios Recientes</h1>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button *ngFor="let group of getCardGroups(); let i = index" type="button"
+                data-bs-target="#carouselExampleIndicators" [attr.data-bs-slide-to]="i" [class.active]="i === 0"
+                aria-current="true" [attr.aria-label]="'Slide ' + (i + 1)"></button>
         </div>
-        <nav>
-            <a href="index.html">Inicio</a> |
-            <a href="preguntas-frecuentes.html">Preguntas frecuentes</a> |
-            <a href="canales-de-atencion.html">Canales de atención</a>
-        </nav>
-        <div class="auth-buttons">
-            <button onclick="location.href='registro.html'" class="btn btn-grey">Registrar</button>
-            <button onclick="location.href='login.html'" class="btn btn-blue">Iniciar sesión</button>
-        </div>
-    </header>
-    <hr>
-    <main>
-        <div class="search-section">
-            <h1>¿A dónde quieres ir?</h1>
-            <div class="search-box">
-                <input type="text" placeholder="Lugares para visitar, cosas qué hacer, pasar el rato...">
-                <span class="icon">🔍</span>
-                <span class="icon">🎤</span>
+        <div class="carousel-inner">
+            <div *ngFor="let group of getCardGroups(); let i = index" class="carousel-item" [class.active]="i === 0">
+                <div class="row">
+                    <div *ngFor="let card of group" class="col-md-4">
+                        <div class="card">
+                            <img [src]="card.image" class="card-img-top" [alt]="card.name">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ card.name }}</h5>
+                                <div>
+                                    <ng-container *ngFor="let star of [].constructor(5); let starIndex = index">
+                                        <i class="fa" [class.fa-star]="starIndex < card.rating"
+                                            [class.fa-star-o]="starIndex >= card.rating"></i>
+                                    </ng-container>
+                                </div>
+                                <p class="card-text">{{ card.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <section class="comments">
-            <h2>Comentarios recientes</h2>
-            <div class="carousel">
-                
-            </div>
-        </section>
-        <section class="categories">
-            <h2>Categorías</h2>
-            <div class="category-grid">
-                <div class="category" onclick="location.href='panaderia.html'">
-                    <img src="panaderia.png" alt="Panadería">
-                    <p>Panadería</p>
-                </div>
-                <div class="category" onclick="location.href='bar.html'">
-                    <img src="bar.png" alt="Bar">
-                    <p>Bar</p>
-                </div>
-                <div class="category" onclick="location.href='cafeteria.html'">
-                    <img src="cafeteria.png" alt="Cafetería">
-                    <p>Cafetería</p>
-                </div>
-                <div class="category" onclick="location.href='restaurante.html'">
-                    <img src="restaurante.png" alt="Restaurante">
-                    <p>Restaurante</p>
-                </div>
-                <div class="category" onclick="location.href='discoteca.html'">
-                    <img src="discoteca.png" alt="Discoteca">
-                    <p>Discoteca</p>
-                </div>
-                <div class="category" onclick="location.href='otro.html'">
-                    <img src="otro.png" alt="Otro">
-                    <p>Otro</p>
-                </div>
-                <div class="category" onclick="location.href='supermercado.html'">
-                    <img src="supermercado.png" alt="Supermercado">
-                    <p>Supermercado</p>
-                </div>
-                <div class="category" onclick="location.href='tienda.html'">
-                    <img src="tienda.png" alt="Tienda">
-                    <p>Tienda</p>
-                </div>
-            </div>
-        </section>
-    </main>
-</body>
-</html> -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <h1 class="titulo">Categorías</h1>
+    <div class="row">
+        <div class="col-md-3" *ngFor="let cuadro of cuadros">
+            <app-cuadro [imagenSrc]="cuadro.imagenSrc" [nombre]="cuadro.nombre"></app-cuadro>
+        </div>
+    </div>
+</div>

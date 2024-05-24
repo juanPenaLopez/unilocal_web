@@ -38,4 +38,10 @@ export class UsuariosService {
       params: { idUsuario }
     });
   }
+
+  public recuperarContrasena(correo: string): Observable<ResultadoDTO>{
+    return this.http.post<ResultadoDTO>(this.usuariosURL + "/recuperar-contrasena", correo).pipe(
+      finalize(() => this.loadingService.hide())
+    );
+  }
 }

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
 
-import { ComentarioDTO } from ComentarioDTO; 
 
 @Component({
   selector: 'app-responder-comentario',
