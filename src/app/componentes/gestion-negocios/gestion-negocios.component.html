@@ -27,4 +27,9 @@
         </tbody>
     </table>
     <app-modal-informacion [title]="modalTitle" [content]="modalContent"></app-modal-informacion>
+    <app-modal-confirmacion
+                        [title]="modalTitleConfirmacion"
+                        [content]="modalContentConfirmacion"
+                        (confirmed)="onConfirmation($event)">
+</app-modal-confirmacion>
 </div>

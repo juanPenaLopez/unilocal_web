@@ -13,6 +13,8 @@ import { CrearEventoComponent } from './componentes/crear-evento/crear-evento.co
 import { CrearReservaComponent } from './componentes/crear-reserva/crear-reserva.component';
 import { AdicionarNegocioComponent } from './componentes/adicionar-negocio/adicionar-negocio.component';
 import { ConsultarMisReservasComponent } from './componentes/consultar-mis-reservas/consultar-mis-reservas.component';
+import { ConsultarNegocioComponent } from './componentes/consultar-negocio/consultar-negocio.component';
+import { EditarNegocioComponent } from './componentes/editar-negocio/editar-negocio.component';
 
 export const routes: Routes = [
 { path: '', component: InicioComponent },
@@ -29,5 +31,7 @@ export const routes: Routes = [
 { path: "crear-evento", component: CrearEventoComponent },
 { path: "crear-reserva", component: CrearReservaComponent },
 { path: "mis-reservas", component: ConsultarMisReservasComponent },
+{ path: "consultar-negocio", component: ConsultarNegocioComponent },
+{ path: "editar-negocio", component: EditarNegocioComponent },
 { path: "**", pathMatch: "full", redirectTo: "" }
 ];
