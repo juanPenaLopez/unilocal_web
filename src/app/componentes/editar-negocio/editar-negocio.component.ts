@@ -36,39 +36,39 @@ export class EditarNegocioComponent {
     this.actualizarNegocio = new LugarDTO();
   }
 
-  public editarNegocio() {
-    if (this.tokenService.isLogged()) {
-      const token = this.tokenService.getToken();
-      if (token) {
-        const decodedToken = this.tokenService.decodePayload(token);
-        this.llenarFiltros(this.form.getRawValue(), decodedToken);
-        this.negociosService.editarNegocio(this.actualizarNegocio).subscribe(respuesta => {
-          if (respuesta.exitoso) {
-            this.modalTitle = "Hecho";
-            this.modalContent = "El negocio se actualizó correctamente";
-            this.modalComponent.openModal();
-            this.redireccionarPantallaPrincipal();
-          }
-        });
-      } else {
-        this.modalTitle = "Error";
-        this.modalContent = "Se ha presentado un error técnico";
-        this.modalComponent.openModal();
-      }
-    }
-  }
+  // public editarNegocio() {
+  //   if (this.tokenService.isLogged()) {
+  //     const token = this.tokenService.getToken();
+  //     if (token) {
+  //       const decodedToken = this.tokenService.decodePayload(token);
+  //       this.llenarFiltros(this.form.getRawValue(), decodedToken);
+  //       this.negociosService.editarNegocio(this.actualizarNegocio).subscribe(respuesta => {
+  //         if (respuesta.exitoso) {
+  //           this.modalTitle = "Hecho";
+  //           this.modalContent = "El negocio se actualizó correctamente";
+  //           this.modalComponent.openModal();
+  //           this.redireccionarPantallaPrincipal();
+  //         }
+  //       });
+  //     } else {
+  //       this.modalTitle = "Error";
+  //       this.modalContent = "Se ha presentado un error técnico";
+  //       this.modalComponent.openModal();
+  //     }
+  //   }
+  // }
 
-  public redireccionarPantallaPrincipal() {
-    this.router.navigate(['/'], { relativeTo: this.route.parent });
-  }
+  // public redireccionarPantallaPrincipal() {
+  //   this.router.navigate(['/'], { relativeTo: this.route.parent });
+  // }
 
-  private llenarFiltros(formulario: any, token: any) {
-    this.actualizarNegocio.id = token.id;
-    this.actualizarNegocio.nombre = formulario.nombre;
-    this.actualizarNegocio.categoria = formulario.CategoriaLugarEnum;
-    this.actualizarNegocio.telefono = formulario.telefono;
-    this.actualizarNegocio.descripcion = formulario.descripcion;
-    this.actualizarNegocio.horaInicio = formulario.horaInicio;
-    this.actualizarNegocio.horaFin = formulario.horaFin;
-  }
+  // private llenarFiltros(formulario: any, token: any) {
+  //   this.actualizarNegocio.id = token.id;
+  //   this.actualizarNegocio.nombre = formulario.nombre;
+  //   this.actualizarNegocio.categoria = formulario.CategoriaLugarEnum;
+  //   this.actualizarNegocio.telefono = formulario.telefono;
+  //   this.actualizarNegocio.descripcion = formulario.descripcion;
+  //   this.actualizarNegocio.horaInicio = formulario.horaInicio;
+  //   this.actualizarNegocio.horaFin = formulario.horaFin;
+  // }
 }

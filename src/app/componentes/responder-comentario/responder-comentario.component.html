@@ -1,58 +1,44 @@
-<!-- <div class="container mt-5">
-    <h1 class="titulo">Datos del lugar</h1>
-    <div class="form-group">
-       <label>Nombre:</label>
-      <span>{{ lugar.nombre }}</span>
+<div class="container">
+    <a class="volver-link"> Volver</a>
+    <h1 class="titulo">Datos del remitente</h1>
+    <div class="row mb-2">
+        <div class="col-md-4">
+            <div class="d-flex mb-2">
+                <p class="mr-2 nombre-label-consultar">Nombre usuario: </p>
+                <strong class="nombre-label-consultar">PRUEBA</strong>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="d-flex mb-2">
+                <p class="mr-2 nombre-label-consultar">Fecha del comentario: </p>
+                <strong class="nombre-label-consultar">PRUEBA</strong>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="d-flex mb-2">
+                <p class="mr-2 nombre-label-consultar">Calificación: </p>
+                <!-- <ng-container *ngFor="let star of [].constructor(5); let starIndex = index">
+                    <i class="fa" [class.fa-star]="starIndex < card.rating" [class.fa-star-o]="starIndex >= card.rating"></i>
+                </ng-container> -->
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mensajeInicial" class="nombre-label-consultar">Mensaje:</label>
+            <textarea id="mensajeInicial" name="mensajeInicial"
+                class="textarea-modificado" disabled ></textarea>
+        </div>
     </div>
+    <h1 class="titulo">Respuesta</h1>
     <div class="form-group">
-      <label>Ubicación:</label>
-      <span>{{ lugar.ubicacion }}</span>
+        <label for="mensajeRespuesta" class="nombre-label-consultar">Mensaje:</label>
+        <textarea id="mensajeRespuesta" name="mensajeRespuesta" formControlName="mensajeRespuesta"
+            class="textarea-modificado"></textarea>
     </div>
-    <div class="form-group">
-      <label>Categoría:</label>
-      <span>{{ lugar.categoria }}</span>
-    </div>
-    <div class="form-group">
-      <label>Teléfonos:</label>
-      <span>{{ lugar.telefono }}</span>
-    </div>
-    <div class="form-group">
-      <label>Descripción:</label>
-      <textarea class="form-control" rows="4" disabled>{{ lugar.descripcion }}</textarea>
-    </div>
-    <div class="form-group">
-      <button class="btn btn-primary">Consultar imágenes</button>
-      <button class="btn btn-secondary">Ver ubicación en mapa</button>
+    <div class="row justify-content-center">
+        <div class="col-6 text-center">
+            <button type="button" class="btn btn-primary btn-wide">Responder</button>
+        </div>
     </div>
 </div>
-<div class="comments-section">
-  <h2>Comentarios</h2>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Nombre usuario</th>
-        <th>Nombre propietario</th>
-        <th>¿Está respondido?</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let comentario of comentarios">
-            <td>{{ comentario.nombreUsuario }}</td>
-            <td>{{ comentario.nombrePropietario }}</td>
-            <td>{{ comentario.estaRespondido ? 'Sí' : 'No' }}</td>
-            <td class="actions">
-              <img src="assets/images/view-icon.png" alt="Ver">
-              <img *ngIf="!comentario.estaRespondido" src="assets/images/respond-icon.png" alt="Responder">
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <nav>
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">de XXX</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div> -->

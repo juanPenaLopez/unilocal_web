@@ -1,0 +1,33 @@
+.titulo {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 0;
+    text-decoration: underline;
+}
+
+.volver-link {
+    color: blue;
+    text-decoration: underline;
+}
+
+.nombre-label-consultar {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.textarea-modificado {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.btn-wide {
+    margin-top: 20px;
+    padding: 10px 60px;
+}
