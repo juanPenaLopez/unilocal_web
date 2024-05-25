@@ -9,7 +9,7 @@ import { LoadingService } from './loading.service';
 })
 export class CiudadService {
 
-  private ciudadURL = "http://localhost:8080/api/ciudad";
+  private ciudadURL = "https://unilocal-oyt6.onrender.com/api/ciudad";
 
   constructor(private http: HttpClient,
     private loadingService: LoadingService) { }
