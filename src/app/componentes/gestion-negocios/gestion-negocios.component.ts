@@ -41,7 +41,8 @@ export class GestionNegociosComponent implements OnInit {
   constructor(private lugarServicio: NegociosService,
     private tokenService: TokenService,
     private router: Router,
-		private route: ActivatedRoute
+		private route: ActivatedRoute,
+    private lugarService: NegociosService
   ) {
     this.lugarDTO = new LugarDTO();
   }
@@ -67,6 +68,7 @@ export class GestionNegociosComponent implements OnInit {
 
   public buscarLugar(lugar: LugarDTO) {
     if (this.tokenService.isLogged()) {
+      this.lugarServicio.seleccionarLugar(lugar);
       this.router.navigate(['/consultar-negocio'], { relativeTo: this.route.parent });
     }
   }
