@@ -6,48 +6,49 @@
         <div class="col-md-4">
           <div class="d-flex mb-2">
             <p class="mr-2 nombre-label-consultar">Nombre: </p>
-            <strong class="nombre-label-consultar">PRUEBA</strong>
+            <strong class="nombre-label-consultar">{{ lugarDTOConsulta.nombre }}</strong>
           </div>
           <div class="d-flex mb-2">
             <p class="mr-2 nombre-label-consultar">Ubicación: </p>
-            <strong class="nombre-label-consultar">PRUEBA</strong>
+            <strong class="nombre-label-consultar">{{ lugarDTOConsulta.ubicacion }}</strong>
           </div>
           <div class="d-flex mb-2">
             <p class="mr-2 nombre-label-consultar">Teléfonos: </p>
-            <strong class="nombre-label-consultar">PRUEBA</strong>
+            <strong class="nombre-label-consultar">{{ lugarDTOConsulta.telefonos }}</strong>
           </div>
         </div>
 
         <div class="col-md-4">
           <div class="d-flex mb-2">
             <p class="mr-2 nombre-label-consultar">Categoría: </p>
-            <strong class="nombre-label-consultar">PRUEBA</strong>
+            <strong class="nombre-label-consultar">{{ lugarDTOConsulta.categoriaLugar }}</strong>
           </div>
           <div class="d-flex mb-2">
             <p class="mr-2 nombre-label-consultar">Usuario creación: </p>
-            <strong class="nombre-label-consultar">PRUEBA</strong>
+            <strong class="nombre-label-consultar">{{ lugarDTOConsulta.usuarioCreacion }}</strong>
           </div>
         </div>
         <div class="col-md-4">
           <div class="d-flex mb-2">
             <p class="mr-2 nombre-label-consultar">Estado: </p>
-            <strong class="nombre-label-consultar">PRUEBA</strong>
+            <strong class="nombre-label-consultar">{{ lugarDTOConsulta.estado }}</strong>
           </div>
           <div class="d-flex mb-2">
             <p class="mr-2 nombre-label-consultar">Fecha creación: </p>
-            <strong class="nombre-label-consultar">PRUEBA</strong>
+            <strong class="nombre-label-consultar">{{ lugarDTOConsulta.fechaCreacion }}</strong>
           </div>
         </div>
         <div class="form-group">
-          <label for="descripcion" class="nombre-label-consultar">Descripción:</label>
-          <textarea id="descripcion" name="descripcion" formControlName="descripcion"
-            class="textarea-modificado"></textarea>
+          <label for="descripcion1" class="nombre-label-consultar">Descripción:</label>
+          <textarea id="descripcion1" name="descripcion1" class="textarea-modificado"></textarea>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-6 text-center">
-          <button type="button" class="btn btn-red-pastel btn-wide" (click)="consultarImagenesLugar()">Consultar imagenes</button>
-          <button type="button" class="btn btn-blue-pastel btn-wide" (click)="verUbicacionMapa()">Ver ubicación en mapa</button>
+          <button type="button" class="btn btn-red-pastel btn-wide" (click)="consultarImagenesLugar()">Consultar
+            imagenes</button>
+          <button type="button" class="btn btn-blue-pastel btn-wide" (click)="verUbicacionMapa()">Ver ubicación en
+            mapa</button>
           <button type="button" class="btn btn-gray-pastel btn-wide" (click)="crearReserva()">Crear reserva</button>
         </div>
       </div>
@@ -60,6 +61,13 @@
             <th class="nombre-label-consultar">Hora Fin</th>
           </tr>
         </thead>
+        <tbody>
+          <tr *ngFor="let horario of lugarDTOConsulta.horarios; let i = index">
+            <td class="nombre-label-consultar">{{ horario.dia }}</td>
+            <td class="nombre-label-consultar">{{ horario.horaInicio }}</td>
+            <td class="nombre-label-consultar">{{ horario.horaFin }}</td>
+          </tr>
+        </tbody>
       </table>
       <h1 class="titulo">Revisiones</h1>
       <table class="table">
@@ -71,6 +79,14 @@
             <th class="nombre-label-consultar">Descripción</th>
           </tr>
         </thead>
+        <tbody>
+          <tr *ngFor="let revision of lugarDTOConsulta.revisiones; let i = index">
+            <td class="nombre-label-consultar">{{ revision.idModerador}}</td>
+            <td class="nombre-label-consultar">{{ revision.estadoRevision }}</td>
+            <td class="nombre-label-consultar">{{ revision.fecha }}</td>
+            <td class="nombre-label-consultar">{{ revision.descripcion }}</td>
+          </tr>
+        </tbody>
       </table>
       <h1 class="titulo">Eventos</h1>
       <table class="table">
@@ -85,7 +101,7 @@
       </table>
       <div class="row justify-content-center">
         <div class="col-6 text-center">
-          <button type="button" class="btn btn-outline-primary me-4 btn-wide">Consultar comentarios</button>
+          <button type="button" class="btn btn-outline-primary me-4 btn-wide" (click)="irAConsultarComentarios()">Consultar comentarios</button>
           <button type="button" class="btn btn-primary btn-wide">Comentar</button>
         </div>
       </div>
