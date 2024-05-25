@@ -3,25 +3,24 @@
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th>N° Único</th>
-                <th>Fecha de Reserva</th>
-                <th>Hora de Reserva</th>
-                <th>Cantidad de Personas</th>
-                <th>Estado</th>
-                <th>Nombre de lugar</th>
-                <th>Acciones</th>
+                <th class="nombre-label-consultar">N° Único</th>
+                <th class="nombre-label-consultar">Fecha de Reserva</th>
+                <th class="nombre-label-consultar">Hora de Reserva</th>
+                <th class="nombre-label-consultar">Cantidad de Personas</th>
+                <th class="nombre-label-consultar">Estado</th>
+                <th class="nombre-label-consultar">Nombre de lugar</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let reserva of arrayReservas">
-              <td>{{ reserva.id }}</td>
-              <td>{{ reserva.fechaReserva }}</td>
-              <td>{{ reserva.horaReserva }}</td>
-              <td>{{ reserva.numeroPersonas }}</td>
-              <td>{{ reserva.estadoReserva }}</td>
-              <td>Hola</td>
-              <td>PRUEBA</td>
+                <td class="nombre-label-consultar">{{ reserva.id }}</td>
+                <td class="nombre-label-consultar">{{ reserva.fechaReserva }}</td>
+                <td class="nombre-label-consultar">{{ reserva.horaReserva }}</td>
+                <td class="nombre-label-consultar">{{ reserva.numeroPersonas }}</td>
+                <td class="nombre-label-consultar">{{ reserva.estadoReserva }}</td>
+                <td class="nombre-label-consultar">{{ reserva.idLugar }}</td>
             </tr>
-          </tbody>
+        </tbody>
     </table>
+    <app-modal-informacion [title]="modalTitle" [content]="modalContent"></app-modal-informacion>
 </div>
