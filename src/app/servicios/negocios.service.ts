@@ -4,6 +4,7 @@ import { Observable, finalize } from 'rxjs';
 import { LoadingService } from './loading.service';
 import { LugarDTO } from '../dto/lugar.dto';
 import { ResultadoDTO } from '../dto/resultado.dto';
+import { CrearLugarDTO } from '../dto/crear.lugar.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,11 @@ export class NegociosService {
   public eliminarNegocio(idNegocio: string): Observable<ResultadoDTO> {
     const url = `${this.negociosURL}/eliminar-lugar?idNegocio=${idNegocio}`;
     return this.http.delete<ResultadoDTO>(url);
+  }
+
+  public crearLugar(inDTO: CrearLugarDTO): Observable<ResultadoDTO>{
+    return this.http.post<ResultadoDTO>(this.negociosURL + "/registrar-lugar", inDTO).pipe(
+      finalize(() => this.loadingService.hide())
+    );
   }
 }

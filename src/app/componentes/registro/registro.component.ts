@@ -1,10 +1,12 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ModalInformacionComponent } from '../modal-informacion/modal-informacion.component';
 import { UsuariosService } from '../../servicios/usuarios.service';
 import { RegistroClienteDTO } from '../../dto/registro.cliente.dto';
 import { ImagenService } from '../../servicios/imagen.service';
 import { HttpResponse } from '@angular/common/http';
+import { CiudadDTO } from '../../dto/ciudad.dto';
+import { CiudadService } from '../../servicios/ciudad.service';
 
 @Component({
   selector: 'app-registro',
@@ -13,7 +15,7 @@ import { HttpResponse } from '@angular/common/http';
   templateUrl: './registro.component.html',
   styleUrl: './registro.component.css'
 })
-export class RegistroComponent {
+export class RegistroComponent implements OnInit{
 
   @ViewChild(ModalInformacionComponent) modalComponent: ModalInformacionComponent;
 
@@ -24,10 +26,12 @@ export class RegistroComponent {
   modalTitle: string;
   modalContent: string;
   selectedFile: File;
+  ciudades: Array<CiudadDTO> = [];
 
   constructor(private formBuilder: FormBuilder,
     private usuariosService: UsuariosService,
-    private imagenService: ImagenService
+    private imagenService: ImagenService,
+    private ciudadService: CiudadService
   ) {
     this.form = this.formBuilder.group({
       nombreCompleto: [null, [Validators.required]],
@@ -42,6 +46,10 @@ export class RegistroComponent {
     });
 
     this.registroUsuario = new RegistroClienteDTO();
+  }
+
+  ngOnInit(): void {
+    this.consultarCiudades();
   }
 
   public async crearCuenta() {
@@ -74,7 +82,7 @@ export class RegistroComponent {
       console.error('Error al llenar filtros de cuenta:', error);
     }
   }
-  
+
 
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
@@ -99,5 +107,17 @@ export class RegistroComponent {
     } catch (error) {
       throw new Error('Error en la llamada HTTP');
     }
+  }
+
+  public consultarCiudades(){
+    this.ciudadService.consultarCiudades().subscribe(resp => {
+      if(resp){
+        this.ciudades = resp;
+      }
+    }, error => {
+      this.modalTitle = "Error";
+          this.modalContent = "Se ha presentado un error técnico";
+          this.modalComponent.openModal();
+    });
   }
 }
