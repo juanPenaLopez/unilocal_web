@@ -26,14 +26,14 @@ export class InicioComponent implements OnInit{
   ];
 
   cuadros = [
-    { imagenSrc: 'assets/img1.png', nombre: 'PANADERÍA' },
-    { imagenSrc: 'assets/img2.png', nombre: 'BAR' },
-    { imagenSrc: 'assets/img3.png', nombre: 'CAFETERÍA' },
-    { imagenSrc: 'assets/img4.png', nombre: 'RESTAURANTE' },
-    { imagenSrc: 'assets/img5.png', nombre: 'DISCOTECA' },
-    { imagenSrc: 'assets/img6.png', nombre: 'OTRO' },
-    { imagenSrc: 'assets/img7.png', nombre: 'SUPERMERCADO' },
-    { imagenSrc: 'assets/img8.png', nombre: 'TIENDA' }
+    { imagenSrc: 'https://res.cloudinary.com/ddvhflywy/image/upload/f_auto,q_auto/v1/unilocal/vixysoa5agsl65sxra9m', nombre: 'PANADERÍA' },
+    { imagenSrc: 'https://res.cloudinary.com/ddvhflywy/image/upload/f_auto,q_auto/v1/unilocal/k2prvgazrhxmqm4zaasi', nombre: 'BAR' },
+    { imagenSrc: 'https://res.cloudinary.com/ddvhflywy/image/upload/f_auto,q_auto/v1/unilocal/pt9z8cb5uzpvggpjkvph', nombre: 'CAFETERÍA' },
+    { imagenSrc: 'https://res.cloudinary.com/ddvhflywy/image/upload/f_auto,q_auto/v1/unilocal/jzok79mkotrjf0feyewb', nombre: 'RESTAURANTE' },
+    { imagenSrc: 'https://res.cloudinary.com/ddvhflywy/image/upload/f_auto,q_auto/v1/unilocal/b9beajecf9kikka2ndvp', nombre: 'DISCOTECA' },
+    { imagenSrc: 'https://res.cloudinary.com/ddvhflywy/image/upload/f_auto,q_auto/v1/unilocal/cnybizyfaxab10pofebp', nombre: 'OTRO' },
+    { imagenSrc: 'https://res.cloudinary.com/ddvhflywy/image/upload/f_auto,q_auto/v1/unilocal/pzh0fdrx49x669c3rgai', nombre: 'SUPERMERCADO' },
+    { imagenSrc: 'https://res.cloudinary.com/ddvhflywy/image/upload/f_auto,q_auto/v1/unilocal/ylpipdgaiocs12pjmhpm', nombre: 'TIENDA' }
   ];
 
   getCardGroups() {
