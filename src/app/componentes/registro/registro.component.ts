@@ -7,11 +7,12 @@ import { ImagenService } from '../../servicios/imagen.service';
 import { HttpResponse } from '@angular/common/http';
 import { CiudadDTO } from '../../dto/ciudad.dto';
 import { CiudadService } from '../../servicios/ciudad.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-registro',
   standalone: true,
-  imports: [ReactiveFormsModule, ModalInformacionComponent],
+  imports: [ReactiveFormsModule, ModalInformacionComponent, CommonModule],
   templateUrl: './registro.component.html',
   styleUrl: './registro.component.css'
 })
@@ -53,6 +54,14 @@ export class RegistroComponent implements OnInit{
   }
 
   public async crearCuenta() {
+
+    if(this.form.invalid){
+      this.modalTitle = "Error";
+      this.modalContent = "Por favor llene todos los campos";
+      this.modalComponent.openModal();
+      return;
+    }
+
     try {
       await this.llenarFiltrosCuenta(this.form.getRawValue());
 

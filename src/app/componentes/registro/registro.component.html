@@ -36,7 +36,7 @@
                 <label for="ciudad" class="label-modificado">Ciudad:</label>
                 <select id="ciudad" class="input-modificado" placeholder="Seleccione una ciudad" formControlName="ciudad">
                     <option value="" disabled selected>Seleccione una ciudad</option>
-                    <option *ngFor="let ciudad of ciudades" [value]="ciudad.value">{{ ciudad.label }}</option>
+                    <option *ngFor="let ciudad of ciudades" [value]="ciudad.id">{{ ciudad.nombre }}</option>
                 </select>
             </div>
             <div class="col-md-6">
