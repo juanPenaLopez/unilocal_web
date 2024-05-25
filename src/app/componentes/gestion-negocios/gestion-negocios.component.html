@@ -19,19 +19,27 @@
                 <td class="nombre-label-consultar">{{ lugar.fechaCreacion }}</td>
                 <td class="nombre-label-consultar">{{ lugar.usuarioCreacion }}</td>
                 <td>
-                    <button (click)="buscarLugar(lugar)" matTooltip="Buscar"><fa-icon [icon]="faSearch"></fa-icon></button>
-                    <button (click)="editarLugar(lugar)" matTooltip="Editar"><fa-icon [icon]="faEdit"></fa-icon></button>
-                    <button (click)="eliminarLugar(lugar)" matTooltip="Eliminar"><fa-icon [icon]="faTrash"></fa-icon></button>
-                    <button *ngIf="userRole === 'moderador'" (click)="aprobarLugar(lugar)" matTooltip="Aprobar"><fa-icon [icon]="faCheck"></fa-icon></button>
-                    <button *ngIf="userRole === 'moderador'" (click)="rechazarLugar(lugar)" matTooltip="Rechazar"><fa-icon [icon]="faTimes"></fa-icon></button>
+                    <button (click)="buscarLugar(lugar)" matTooltip="Buscar"><fa-icon
+                            [icon]="faSearch"></fa-icon></button>
+                    <button *ngIf="lugar.estado !== 'INACTIVO'" (click)="editarLugar(lugar)" matTooltip="Editar"><fa-icon
+                            [icon]="faEdit"></fa-icon></button>
+                    <button *ngIf="lugar.estado !== 'INACTIVO'" (click)="eliminarLugar(lugar)" matTooltip="Eliminar"><fa-icon
+                            [icon]="faTrash"></fa-icon></button>
+                    <button *ngIf="userRole === 'moderador'" (click)="aprobarLugar(lugar)" matTooltip="Aprobar"><fa-icon
+                            [icon]="faCheck"></fa-icon></button>
+                    <button *ngIf="userRole === 'moderador'" (click)="rechazarLugar(lugar)"
+                        matTooltip="Rechazar"><fa-icon [icon]="faTimes"></fa-icon></button>
                 </td>
             </tr>
         </tbody>
     </table>
     <app-modal-informacion [title]="modalTitle" [content]="modalContent"></app-modal-informacion>
-    <app-modal-confirmacion
-                        [title]="modalTitleConfirmacion"
-                        [content]="modalContentConfirmacion"
-                        (confirmed)="onConfirmation($event)">
-</app-modal-confirmacion>
+    <app-modal-confirmacion [title]="modalTitleConfirmacion" [content]="modalContentConfirmacion"
+        (confirmed)="onConfirmation($event)">
+    </app-modal-confirmacion>
+    <div class="row justify-content-center">
+        <div class="col-6 text-center">
+            <button type="button" class="btn btn-primary btn-wide" (click)="irACrearLugar()">Añadir</button>
+        </div>
+    </div>
 </div>

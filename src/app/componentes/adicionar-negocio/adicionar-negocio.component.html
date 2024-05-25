@@ -1,109 +1,68 @@
-<!-- <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear un lugar</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-        .header img {
-            width: 100px;
-        }
-        .header a {
-            color: blue;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        .header a:hover {
-            text-decoration: underline;
-        }
-        .header .user-info {
-            display: flex;
-            align-items: center;
-        }
-        .header .user-info img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-        .header .user-info span {
-            font-weight: bold;
-        }
-        .content {
-            padding: 20px;
-        }
-        .content h2 {
-            color: blue;
-            text-decoration: underline;
-        }
-        .content form {
-            margin-top: 20px;
-        }
-        .content form input,
-        .content form select,
-        .content form textarea {
-            width: 100%;
-            margin-bottom: 10px;
-        }
-        .content form button {
-            background-color: blue;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        .content form button:hover {
-            background-color: darkblue;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <img src="logo.png" alt="Logo">
-        <div class="user-info">
-            <img src="user.png" alt="Usuario">
-            <span>Nombre de usuario</span>
+<div class="container">
+    <a class="volver-link">X Cancelar</a>
+    <h1 class="titulo">Datos generales</h1>
+    <form [formGroup]="form">
+        <div class="form-group horizontal-group">
+            <div class="field">
+                <label for="nombre" class="label-modificado">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" formControlName="nombre" class="input-modificado">
+            </div>
+            <div class="field">
+                <label for="categoria" class="label-modificado">Categoría:</label>
+                <select id="categoria" class="input-modificado" placeholder="Seleccione una categoria"
+                    formControlName="categoria">
+                    <option value="" disabled selected>Seleccione una ciudad</option>
+                    <option *ngFor="let categoria of categorias" [value]="categoria.value">{{ categoria.key }}</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="telefonos" class="label-modificado">Teléfonos:</label>
+                <input type="text" id="telefonos" name="telefonos" formControlName="telefonos"
+                    class="input-modificado">
+            </div>
         </div>
-        <div>
-            <a href="#">Inicio</a> |
-            <a href="#">Preguntas frecuentes</a> |
-            <a href="#">Descubrir</a>
+        <div class="form-group">
+            <label for="descripcion" class="nombre-label-consultar">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" formControlName="descripcion"
+                class="textarea-modificado"></textarea>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6 text-center">
+                <button type="button" class="btn btn-red-pastel btn-wide">Selecciona ubicación</button>
+            </div>
+        </div>
+        <h1 class="titulo">Horarios</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="nombre-label-consultar">Día</th>
+                    <th class="nombre-label-consultar">Hora Inicio</th>
+                    <th class="nombre-label-consultar">Hora Fin</th>
+                    <th class="nombre-label-consultar">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of horarios; let i = index">
+                    <td class="nombre-label-consultar"><input type="text" [(ngModel)]="row.dia"
+                        [ngModelOptions]="{standalone: true}" class="form-control" /></td>
+                    <td class="nombre-label-consultar"><input type="time" [(ngModel)]="row.horaInicio"
+                        [ngModelOptions]="{standalone: true}" class="form-control" /></td>
+                    <td class="nombre-label-consultar"><input type="time" [(ngModel)]="row.horaFin"
+                        [ngModelOptions]="{standalone: true}" class="form-control" /></td>
+                    <td><button (click)="removeRow(i)" class="btn btn-danger">X</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <button (click)="addRow()" class="btn btn-primary">Agregar Fila</button>
+        <h1 class="titulo">Imágener</h1>
+        <button type="button" class="btn btn-blue-pastel btn-wide">Añadir imágen</button>
+        <h1 class="titulo">Eventos</h1>
+        <button type="button" class="btn btn-gray-pastel btn-wide">Crear evento</button>
+    </form>
+    <div class="row justify-content-center">
+        <div class="col-6 text-center">
+            <button  type="button" class="btn btn-primary btn-wide" (click)="crearLugar()">Crear lugar</button>
         </div>
     </div>
-    <div class="content">
-        <a href="#">X Cancelar</a>
-        <h2>Datos generales</h2>
-        <form>
-            <input type="text" placeholder="Nombre">
-            <select>
-                <option value="">Categoría</option>
-            </select>
-            <input type="text" placeholder="Teléfonos">
-            <textarea placeholder="Descripción"></textarea>
-            <button type="button">Seleccionar ubicación</button>
-        </form>
-        <h2>Horarios</h2>
-        <form>
-            <input type="text" placeholder="Días">
-            <input type="text" placeholder="Hora de inicio">
-            <input type="text" placeholder="Hora de fin">
-            <button type="button">Añadir</button>
-        </form>
-        <h2>Imágenes</h2>
-        <button type="button">Añadir imagen</button>
-        <h2>Eventos</h2>
-        <button type="button">Crear evento</button>
-        <button type="button">Crear lugar</button>
-    </div>
-</body>
-</html> -->
+    <app-modal-informacion [title]="modalTitle" [content]="modalContent"></app-modal-informacion>
+</div>

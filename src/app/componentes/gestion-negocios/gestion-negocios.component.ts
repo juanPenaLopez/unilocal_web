@@ -113,4 +113,8 @@ export class GestionNegociosComponent implements OnInit {
   public rechazarLugar(lugar: LugarDTO){
 
   }
+
+  public irACrearLugar(){
+    this.router.navigate(['/crear-negocio'], { relativeTo: this.route.parent });
+  }
 }
